@@ -5,4 +5,32 @@
 html {
     scroll-behavior: smooth;
 }
-
+body {
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 500;
+    background-color: #faf3e7;
+    color: #333;
+    overflow-anchor: none;
+  }
+  .container {
+    position: relative;
+    width: 100%;
+  }
+  
+/* LANDING */
+  
+#container_one {
+    height: 100vh;
+    background-color: #DED6D3;
+  }
+  .hi {
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 4em;
+    font-weight: 900;
+    padding: 20% 0;
+  }
+  .tiananmen {
+    width: 30vw;
+    margin: 5% 35%;
+  }
