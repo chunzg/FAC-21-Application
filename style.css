@@ -30,6 +30,42 @@ body {
     font-weight: 900;
     padding: 20% 0;
   }
+
+  /* MENU */
+
+  .menu {
+    position: fixed;
+    background: #DED6D3;
+    text-transform: lowercase;
+    top: 0;
+    width: 100vw;
+    height: 0;
+    z-index: 2;
+  }
+  .main-nav {
+    list-style-type: none;
+    padding: 2% 5%;
+    display: flex;
+    justify-content: space-evenly;
+    max-height: 1;
+  }
+  .navbar-button {
+    position: fixed;
+    top: 3%;
+    right: 1.5%;
+    cursor: pointer;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+  }
+  .navbar-plus {
+    position: fixed;
+    height: 2.5em;
+    z-index: 500;
+  }
   .tiananmen {
     width: 30vw;
     margin: 5% 35%;
