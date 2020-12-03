@@ -89,7 +89,7 @@ body {
 
   /* TEXT */
   
-  #container_five {
+  #container_four {
     background-color: #DED6D3;
     text-align: left;
     font-weight: 400;
@@ -97,8 +97,44 @@ body {
     letter-spacing: 0.8px;
     line-height: 1.9em;
   }
-  #container_five div {
+  #container_four div {
     padding-top: 5%;
+  }
+  .text {
+    display: flex;
+    flex-direction: row;
+    padding-top: 3em;
+  }
+  #about {
+    margin-left: 5%;
+    width: 27.5%;
+  }
+  #section-one {
+    width: 61%;
+    display: flex;
+    flex-direction: column;
+  }
+  #whycode {
+    width: 27.5%;
+    text-align: right;
+  }
+  #section-two {
+    margin-left: 5%;
+    width: 61%;
+    display: flex;
+    flex-direction: column;
+  }
+  #whyfac {
+    margin-left: 5%;
+    width: 27.5%;
+  }
+  #section-three {
+    width: 61%;
+    display: flex;
+    flex-direction: column;
+  }
+  #container_five {
+    background-color: #DED6D3;
   }
 
   /* LINKS */
