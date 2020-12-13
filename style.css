@@ -50,7 +50,36 @@ body {
   
 #container_one {
   height: 100vh;
+}
+.original {
+  background-color: #faf3e7;
+}
+.inverted {
   background-color: #DED6D3;
+}
+.original-two {
+  background-color: #DED6D3;
+}
+.inverted-two {
+  background-color: #faf3e7;
+}
+.bg-button {
+  position: fixed;
+  top: 4%;
+  left: 4%;
+  cursor: pointer;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 500;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+#bg {
+  height: 3em;
 }
 .hi {
   text-align: center;
@@ -61,7 +90,6 @@ body {
 }
 
 /* MENU */
-
 .menu {
   position: fixed;
   background: #DED6D3;
@@ -112,9 +140,6 @@ body {
 
 /* INTRO */
 
-#container_three {
-  background-color: #DED6D3;
-}
 #container_three div {
   padding: 10% 34% 5%;
 }
@@ -129,7 +154,6 @@ body {
 /* TEXT */
 
 #container_four {
-  background-color: #DED6D3;
   text-align: left;
   font-weight: 400;
   font-size: 1em;
@@ -172,19 +196,13 @@ body {
   display: flex;
   flex-direction: column;
 }
-#container_five {
-  background-color: #DED6D3;
-}
 
 /* LINKS */
 
 #footer {
-  background-color: #DED6D3;
   display: flex;
   flex-direction: column;
   text-align: center;
-  background: #faf3e7;  
-
 }
 #footer p {
   text-align: center;
