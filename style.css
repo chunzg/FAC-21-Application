@@ -99,6 +99,16 @@ body {
   width: 30vw;
   margin: 5% 35%;
 }
+#sticky_scroll_one {
+  position: sticky;
+  top: 0;
+  height: 100%;
+}
+#sticky_scroll_two {
+  position: sticky;
+  top: 0;
+  height: 100%;
+}
 
 /* INTRO */
 
