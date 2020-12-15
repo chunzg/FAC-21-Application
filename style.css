@@ -150,7 +150,7 @@ h1 {
   transform: rotate(-45deg);
   z-index: 500;
 }
-.tiananmen {
+.my-photo {
   width: 30vw;
   margin: 5% 35%;
 }
@@ -180,17 +180,15 @@ h1 {
 
 /* TEXT */
 
-#container_four {
+main {
   text-align: left;
   font-weight: 400;
   font-size: 1em;
   letter-spacing: 0.8px;
   line-height: 1.9em;
+  padding-bottom: 5em;
 }
-#container_four div {
-  padding-top: 5%;
-}
-.subheading {
+h2 {
   font-family: 'ChemyRetro';
   font-size: 2.5em;
   line-height: 1em;
@@ -198,7 +196,7 @@ h1 {
 .text {
   display: flex;
   flex-direction: row;
-  padding-top: 3em;
+  padding-top: 5em;
 }
 #about {
   margin-left: 5%;
@@ -232,22 +230,20 @@ h1 {
   flex-direction: column;
 }
 
-/* LINKS */
+/* FOOTER */
 
-#footer {
+footer {
   display: flex;
   flex-direction: column;
   text-align: center;
+  padding-top: 5%;
 }
-#footer p {
+footer p {
+  font-size: 1.3em;
   text-align: center;
-  padding-bottom: 2em;
+  padding: 2% 0;
 }
-.links {
-  margin-top: 10%;
-  font-size: 1.5em;
-}
-.links2 {
+footer ul {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -255,22 +251,28 @@ h1 {
 }
 .links2 img {
   text-decoration: none;
-  height: 1.3em;
+  height: 1.8em;
   border-bottom: solid 2px transparent;
+  transition: border-bottom-color .2s ease-out;
+    -webkit-transition: border-bottom-color .2s ease-out;
+    -moz-transition: border-bottom-color .2s ease-out;
+    -ms-transition: border-bottom-color .2s ease-out;
+    -o-transition: border-bottom-color .2s ease-out;
+  }
+.links2 a:hover {
+  border-bottom: solid 3px #333;
 }
 .contact {
-  margin-top: 7%;
-  font-size: 1.5em;
+  margin-top: 3%;
 }
 #email {
   list-style-type: none;
-  font-size: .8em;
+  font-size: 1.3em;
 }
-.copyright {
-  position: relative;
-  margin-top: 10%;
+small {
+  margin-top: 5%;
   font-size: 1em;
-  text-align: center;
+  align-items: flex-end;
 }
 
 /* Responsive */
@@ -308,13 +310,16 @@ h1 {
   .hide {
     display: none;
   }
-  #container_three div {
+  h1 {
+    font-size: 3em;
+  }
+  #container_three {
     padding: 10% 10% !important;
   }
-  #container_four .text {
+  .text {
     display: flex;
     flex-direction: column;
-    margin: 5% 5% 0 5%;
+    padding: 5% 5% 0 5%;
   }
   #section-one, #section-two, #section-three {
     margin-left: 5%;
@@ -330,22 +335,23 @@ h1 {
   #section-three {
     margin-left: 5%;
   }
-  .subheading {
-    font-size: 1em !important;
+  h2 {
+    font-size: 1.5em !important;
+    padding: 1em 0;
     width: 100% !important;
     text-align: center !important;
     margin-left: 0% !important;
   }
-  #footer {
+  footer {
     font-size: .75em;
-    padding-top: 10% !important;
+    padding-top: 5% !important;
+  }
+  footer p {
+    display: none;
   }
   .links2 {
     display: flex;
     flex-direction: column !important;
     line-height: 2.5em !important;
-  }
-  #footer p {
-    display: none;
   }
 }
