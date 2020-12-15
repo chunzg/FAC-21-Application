@@ -190,6 +190,11 @@ h1 {
 #container_four div {
   padding-top: 5%;
 }
+.subheading {
+  font-family: 'ChemyRetro';
+  font-size: 2.5em;
+  line-height: 1em;
+}
 .text {
   display: flex;
   flex-direction: row;
@@ -203,6 +208,9 @@ h1 {
   width: 61%;
   display: flex;
   flex-direction: column;
+}
+#whycode-responsive {
+  display: none;
 }
 #whycode {
   width: 27.5%;
@@ -311,6 +319,22 @@ h1 {
   #section-one, #section-two, #section-three {
     margin-left: 5%;
     width: 90% !important;
+  }
+  #whycode-responsive {
+    display: block !important;
+    text-align: center !important;
+  }
+  #whycode {
+    display: none;
+  }
+  #section-three {
+    margin-left: 5%;
+  }
+  .subheading {
+    font-size: 1em !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-left: 0% !important;
   }
   #footer {
     font-size: .75em;
