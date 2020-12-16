@@ -8,6 +8,10 @@ const mainNav = document.querySelector('.main-nav');
 const navBtn = document.querySelector('.navbar-plus');
 const navLinks = document.querySelectorAll('.nav-link');
 
+//BACK TO TOP
+const up = document.querySelector('#up img');
+
+
 //Invert background colours
 bgBtn.addEventListener('click', invertColours);
 
@@ -41,4 +45,14 @@ navLinks.forEach((x) => {
 		navBtn.style.transform = 'rotate(0deg)';
 	})
 })
+
+// Show/hide back to top button after a certain point
+const showBackToTop = () => {
+    if(window.pageYOffset > 500) {
+		up.style.display = 'block';
+	} else if(window.pageYOffset <= 500) {
+		up.style.display = 'none';
+	}
+}
+window.addEventListener('scroll', showBackToTop);
 

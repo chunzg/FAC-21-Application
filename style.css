@@ -249,7 +249,7 @@ footer ul {
   justify-content: space-evenly;
   list-style-type: none;
 }
-.links2 img {
+.main-links img {
   text-decoration: none;
   height: 1.8em;
   border-bottom: solid 2px transparent;
@@ -259,7 +259,7 @@ footer ul {
     -ms-transition: border-bottom-color .2s ease-out;
     -o-transition: border-bottom-color .2s ease-out;
   }
-.links2 a:hover {
+.main-links a:hover {
   border-bottom: solid 3px #333;
 }
 .contact {
@@ -274,6 +274,16 @@ small {
   font-size: 1em;
   align-items: flex-end;
 }
+#up img {
+  display: none;
+  position: fixed;
+  float: right;
+  width: 2em;
+  right: 1.5%;
+  bottom: 3%;
+  cursor: pointer;
+  z-index: 100;
+}
 
 /* Responsive */
 @media (min-width: 0px) and (max-width: 800px) {
@@ -281,30 +291,30 @@ small {
     margin: 0;
   }
   .navbar-button {
-    top: 4% !important;
-    right: 4% !important;
-    width: .5em !important;
-    height: .5em !important;
+    top: 4% ;
+    right: 4% ;
+    width: .5em ;
+    height: .5em ;
   }
   .navbar-plus {
-    height: 2em !important;
+    height: 2em ;
   }
   .main-nav {
-    flex-direction: column !important;
-    justify-content: space-evenly !important;
+    flex-direction: column ;
+    justify-content: space-evenly ;
     height: 100vh;
-    max-height: 100vh !important;
+    max-height: 100vh ;
     text-align: center;
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     transition: all 1s ease; 
   }
   .active {
-    display: flex !important;
-    flex-direction: column !important;
-    text-align: center !important;
-    justify-content: space-evenly !important;
-    max-height: 100vh !important;
+    display: flex ;
+    flex-direction: column ;
+    text-align: center ;
+    justify-content: space-evenly ;
+    max-height: 100vh ;
     font-size: 1em;
   }
   .hide {
@@ -321,7 +331,7 @@ small {
     font-size: 3em;
   }
   #container_three {
-    padding: 10% 10% !important;
+    padding: 10% 10%;
   }
   .text {
     display: flex;
@@ -330,11 +340,11 @@ small {
   }
   #section-one, #section-two, #section-three {
     margin-left: 5%;
-    width: 90% !important;
+    width: 90%;
   }
   #whycode-responsive {
-    display: block !important;
-    text-align: center !important;
+    display: block;
+    text-align: center;
   }
   #whycode {
     display: none;
@@ -343,28 +353,27 @@ small {
     margin-left: 5%;
   }
   h2 {
-    font-size: 1.5em !important;
+    font-size: 1.5em;
     padding: 1em 0;
-    width: 100% !important;
-    text-align: center !important;
-    margin-left: 0% !important;
+    width: 100%;
+    text-align: center;
   }
   footer {
     font-size: .8em;
-    padding-top: 12% !important;
+    padding-top: 12%;
   }
   footer p {
     display: none;
   }
-  .links2 {
+  .main-links {
     display: flex;
-    flex-direction: column !important;
-    line-height: 3.5em !important;
+    flex-direction: column;
+    line-height: 3.5em;
   }
   #email {
     padding-top: 4%;
   }
   small {
-    padding-top: 10% !important;
+    padding-top: 10%;
   }
 }
