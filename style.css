@@ -167,15 +167,42 @@ h1 {
 
 /* INTRO */
 
-#container_three div {
+#intro div {
   padding: 10% 34% 5%;
 }
-#container_three p {
+#intro p {
   text-align: center;
   padding: 5%;
   font-size: 1.3em;
   letter-spacing: 1px;
   line-height: 1.2em;
+}
+
+/* PICS */
+  
+#container_three {
+  padding: 10% 0% 5%;
+}
+.carousel {
+  width: 100vw;
+  height: auto;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slides {
+  display: flex; /* displays images in a row */
+} 
+.slide {
+  min-width: 25%;
+  /* position: relative; */
+}
+.slide img {
+  width: 90%; 
 }
 
 /* TEXT */
@@ -269,7 +296,7 @@ footer ul {
   list-style-type: none;
   font-size: 1.3em;
 }
-small {
+.copyright {
   padding-top: 5%;
   font-size: 1em;
   align-items: flex-end;
@@ -373,7 +400,7 @@ small {
   #email {
     padding-top: 4%;
   }
-  small {
+  .copyright {
     padding-top: 10%;
   }
 }
