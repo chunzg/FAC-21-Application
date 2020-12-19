@@ -102,6 +102,22 @@ playPause.addEventListener('click', playOrPause)
 playPause.addEventListener('mouseout', () => playPause.style.opacity = '0');
 playPause.addEventListener('mouseover', () => playPause.style.opacity = '1');
 
+// Keyboard function
+function onKeydown(e) {
+	switch(e.key) {
+		case 'ArrowLeft':
+			prevSlide();
+			break;
+		case 'ArrowRight':
+			nextSlide(); //but shows right margin - need to fix
+			break;
+		case 32:
+			e.preventDefault();
+			playOrPause();
+	}
+}
+document.addEventListener('keydown', onKeydown);
+
 
 
 //Invert background colours
