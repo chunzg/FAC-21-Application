@@ -1,5 +1,5 @@
 //BG COLOURS
-const bgBtn = document.querySelector('#bg');
+const slider = document.querySelector('.switch');
 const groupOne = document.querySelectorAll('.original');
 const groupTwo = document.querySelectorAll('.original-two');
 
@@ -7,9 +7,6 @@ const groupTwo = document.querySelectorAll('.original-two');
 const mainNav = document.querySelector('.main-nav');
 const navBtn = document.querySelector('.navbar-plus');
 const navLinks = document.querySelectorAll('.nav-link');
-
-//BACK TO TOP
-const up = document.querySelector('#up img');
 
 // CAROUSEL
 const carousel = document.querySelector('.carousel');
@@ -22,8 +19,46 @@ let index = 4; //can't start on 0 or can't use backwards button
 let playing = true; //check if this line needed? 
 let intervalId;
 
+//BACK TO TOP
+const up = document.querySelector('#up img');
+
 //--------------------------------------------
-// Clone images
+//Invert background colours
+function invertColours() {
+	groupOne.forEach(x => {
+		x.classList.toggle('inverted');
+		x.style.transition = '.4s ease-in';
+	})
+	groupTwo.forEach(x => {
+		x.classList.toggle('inverted-two');
+		x.style.transition = '.4s ease-in';
+	})
+}
+slider.addEventListener('mousedown', invertColours); //click doesn't work here?
+
+//----------
+//Show/hide menu
+function navBtnRotate() {
+	navBtn.addEventListener('click', (e) => {
+		if(mainNav.classList.toggle('active')){
+			e.target.style.transform = 'rotate(45deg)';
+		} else if(mainNav.classList.toggle != 'active') {
+			e.target.style.transform = 'rotate(0deg)';
+		}
+	});
+}
+navBtnRotate()
+
+//Hide menu when a link is clicked
+navLinks.forEach((x) => {
+	x.addEventListener('click', () => {
+		mainNav.classList.toggle('active');
+		navBtn.style.transform = 'rotate(0deg)';
+	})
+})
+
+//--------------
+// Clone images for carousel
 const cloneZero = slide[0].cloneNode(true);
 const cloneOne = slide[1].cloneNode(true);
 const cloneTwo = slide[2].cloneNode(true);
@@ -119,41 +154,7 @@ function onKeydown(e) {
 document.addEventListener('keydown', onKeydown);
 
 
-
-//Invert background colours
-bgBtn.addEventListener('click', invertColours);
-
-function invertColours() {
-	groupOne.forEach(x => {
-		x.classList.toggle('inverted');
-		x.style.transition = '.5s ease-in';
-	})
-	groupTwo.forEach(x => {
-		x.classList.toggle('inverted-two');
-		x.style.transition = '.5s ease-in';
-	})
-}
-
-//Show/hide menu
-function navBtnRotate() {
-	navBtn.addEventListener('click', (e) => {
-		if(mainNav.classList.toggle('active')){
-			e.target.style.transform = 'rotate(45deg)';
-		} else if(mainNav.classList.toggle != 'active') {
-			e.target.style.transform = 'rotate(0deg)';
-		}
-	});
-}
-navBtnRotate()
-
-//Hide menu when a link is clicked
-navLinks.forEach((x) => {
-	x.addEventListener('click', () => {
-		mainNav.classList.toggle('active');
-		navBtn.style.transform = 'rotate(0deg)';
-	})
-})
-
+//----------
 // Show/hide back to top button after a certain point
 const showBackToTop = () => {
     if(window.pageYOffset > 500) {
