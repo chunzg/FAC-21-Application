@@ -98,6 +98,10 @@ function playOrPause() {
 }
 playPause.addEventListener('click', playOrPause)
 
+// Play/pause button mouseover event
+playPause.addEventListener('mouseout', () => playPause.style.opacity = '0');
+playPause.addEventListener('mouseover', () => playPause.style.opacity = '1');
+
 
 
 //Invert background colours
