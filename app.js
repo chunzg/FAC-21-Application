@@ -85,6 +85,30 @@ slideGroup.addEventListener('transitionend', () => { //transitionend means each 
 	}
 });
 
+// PLAY PAUSE BUTTON - slideshow start/stop
+playPause.addEventListener('click', () => {
+	if(!intervalId) {
+		intervalId = startSlide(); // why not just startSlide()
+		console.log('started');
+	} else {
+		clearInterval(intervalId);
+		intervalId = null;
+		console.log('stopped');
+	}
+});
+// PLAY PAUSE BUTTON - image change
+playPause.addEventListener('click', function () { //why arrow function doesn't work here
+	var button = this; 
+	if(button.className != 'pause') {
+		button.src = 'img/pause.png';
+		button.className = 'pause';
+	} else if (button.className == 'pause') {
+		button.src = 'img/play.png';
+		button.className = 'play';
+	}
+	return false;
+});
+
 
 //Invert background colours
 bgBtn.addEventListener('click', invertColours);
