@@ -68,7 +68,7 @@
             <button class='prev-btn'><img src='img/arrow_left.png' alt='arrow left'></button>
             <button class='next-btn'><img src='img/arrow_right.png' alt='arrow right'></button>
           </section>
-          <input type='image' class='pause' src='img/pause.png'>
+          <input type='image' class='pause' src='img/pause.png'> <!-- should this be a button instead? -->
 
         </section>
         
@@ -102,8 +102,15 @@
     
     </main>
 
-    <section id='container_five' class='original-two'>
-    <!-- Thank you for reading -->
+    <section id='scroll-text' class='original-two'>
+      <svg id='svg-container' viewBox='0 0 1806 320'> <!--dimensions of the svg area-->
+        <path id='wave' fill='transparent' stroke='none' stroke-miterlimit='10' d='M-.5 226.5c370.11-106 651.23-92.98 845-58 166.37 30.03 349.27 90.85 619 66 145.47-13.4 263.27-46.85 342-74'/>
+        <text>
+          <textPath id='text' href='#wave' startOffset='0'>
+            Thank you for reading! 🌝      
+          </textPath>
+        </text>
+      </svg>
     </section>
 
 <!-- FOOTER -->
@@ -123,7 +130,7 @@
           <li>chunzhang53@gmail.com</li>
         </ul>
       </nav>
-      <small class='copyright'>©2020 Chun Zhang</small>
+      <small class='copyright'>©2021 Chun Zhang</small>
       <a href='#top' id='up'>
         <img src='img/finger.png' alt='back to top'>
         <span class='screen-reader-text'>Back to top</span>

@@ -19,6 +19,12 @@ let index = 4; //can't start on 0 or can't use backwards button
 let playing = true; //check if this line needed? 
 let intervalId;
 
+//SVG
+const svgContainer = document.querySelector('#svg-container')
+const text = document.querySelector('#text')
+const path = document.querySelector('#wave');
+const pathLength = path.getTotalLength()
+
 //BACK TO TOP
 const up = document.querySelector('#up img');
 
@@ -153,8 +159,18 @@ function onKeydown(e) {
 }
 document.addEventListener('keydown', onKeydown);
 
+//-------------
+//Move text along the svg path according to the user's scroll position
+const moveText = () => {
+	requestAnimationFrame(function() { //similar to setInterval - this method makes it move
+		var rect = svgContainer.getBoundingClientRect();
+		var scrollPercent = rect.y / window.innerHeight; //484/660=0.73 divide domrect obj y by window height gives percentage representation of where element is in the viewport
+		text.setAttribute('startOffset', scrollPercent * pathLength);//0.73*1830=1342 we want to do the same thing here but on the x axis
+	})
+}
+window.addEventListener('scroll', moveText);
 
-//----------
+//-------------
 // Show/hide back to top button after a certain point
 const showBackToTop = () => {
     if(window.pageYOffset > 500) {
