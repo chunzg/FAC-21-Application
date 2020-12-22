@@ -15,9 +15,7 @@ const nextBtn = document.querySelector('.next-btn');
 const prevBtn = document.querySelector('.prev-btn');
 let playPause = document.querySelector('.pause');
 let slide = document.querySelectorAll('.slide');
-let index = 4; //can't start on 0 or can't use backwards button
-let playing = true; //check if this line needed? 
-let intervalId;
+let index = 1; //can't start on 0 or can't use backwards button
 
 //SVG
 const svgContainer = document.querySelector('#svg-container')
@@ -65,28 +63,30 @@ navLinks.forEach((x) => {
 
 //--------------
 // Clone images for carousel
-const cloneZero = slide[0].cloneNode(true);
-const cloneOne = slide[1].cloneNode(true);
-const cloneTwo = slide[2].cloneNode(true);
-const cloneThree = slide[3].cloneNode(true);
-const cloneFour = slide[4].cloneNode(true);
-const cloneFive = slide[5].cloneNode(true);
-const cloneSix = slide[6].cloneNode(true);
+const cloneOne = slide[0].cloneNode(true);
+const cloneTwo = slide[1].cloneNode(true);
+const cloneThree = slide[2].cloneNode(true);
+const cloneFour = slide[3].cloneNode(true);
+const cloneFive = slide[4].cloneNode(true);
+const cloneSix = slide[5].cloneNode(true);
+const cloneSeven = slide[6].cloneNode(true);
 
 // Add clones to start and end of slide group
-slideGroup.prepend(cloneThree, cloneFour, cloneFive, cloneSix);
-slideGroup.append(cloneZero, cloneOne, cloneTwo, cloneThree, cloneFour); //check if need to append so many?
+slideGroup.prepend(cloneFour, cloneFive, cloneSix, cloneSeven);
+slideGroup.append(cloneOne, cloneTwo, cloneThree, cloneFour); //check if need to append so many?
 
 // Set the slide width ie. amount to move
 //why -slideWidth? bc moving left
 const width = slide[index].clientWidth; 
-slideGroup.style.transform = `translateX(${-width * index}px)`; //this line is to set the first image we see as index 4
+slideGroup.style.transform = `translateX(${-width * index}px)`; //this line sets the first image we see as index 3
 
 // Start automatic loop on page load
 // no need for explicit return bc not block code in curly braces
 // no need to do anon function inside setInterval bc nextSlide is in global scope
-const startSlide = () => intervalId = setInterval(nextSlide, 1700); 
-startSlide();
+// const startSlide = () => intervalId = setInterval(nextSlide, 2000); 
+// startSlide();
+
+let intervalId = setInterval(nextSlide, 2000); 
 
 // When click the arrows...
 // Move to next slide
@@ -94,14 +94,14 @@ function nextSlide() {
 	slide = document.querySelectorAll('.slide');
 	index >= slide.length - 4 ? false : index++; //return false means don't continue 
 	slideGroup.style.transform = `translateX(${-width * index}px)`;//needs to be *index bc it signifies the position we are moving it to the left from the starting point. 
-	slideGroup.style.transition = '2s'; 
+	slideGroup.style.transition = '1s'; 
 }
 // Move to previous slide
 function prevSlide() {
 	slide = document.querySelectorAll('.slide');
     index <= 0 ? false : index--; //false is to stop it from going off the carousel
 	slideGroup.style.transform = `translateX(${-width * index}px)`;
-	slideGroup.style.transition = '2s';
+	slideGroup.style.transition = '1s';
 }
 nextBtn.addEventListener('click', nextSlide);
 prevBtn.addEventListener('click', prevSlide);
@@ -130,11 +130,11 @@ slideGroup.addEventListener('transitionend', () => { //transitionend means each 
 function playOrPause() {
 	if(!intervalId) {
 		playPause.src = 'img/pause.png';
-		return startSlide(); 
+		intervalId = setInterval(nextSlide, 2000); 
 	} else {
 		playPause.src = 'img/play.png';
 		clearInterval(intervalId);
-		intervalId = null;
+		intervalId = null; //bc first condition depends if !intervalId 
 	}
 }
 playPause.addEventListener('click', playOrPause)

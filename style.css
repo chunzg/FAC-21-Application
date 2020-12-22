@@ -205,6 +205,12 @@ h1 {
 #container_three {
   padding: 10% 0% 5%;
 }
+.caption {
+  display: flex;
+  justify-content: center;
+  font-size: 1em;
+  padding-bottom: 2%;
+}
 .carousel {
   width: 100vw;
   height: auto;
@@ -332,11 +338,14 @@ footer p {
   text-align: center;
   padding: 2% 0;
 }
-footer ul {
+footer ul, address {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   list-style-type: none;
+}
+li {
+  font-style: normal;
 }
 .main-links img {
   text-decoration: none;
