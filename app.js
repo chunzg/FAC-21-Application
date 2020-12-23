@@ -15,7 +15,7 @@ const nextBtn = document.querySelector('.next-btn');
 const prevBtn = document.querySelector('.prev-btn');
 let playPause = document.querySelector('.pause');
 let slide = document.querySelectorAll('.slide');
-let index = 1; //can't start on 0 or can't use backwards button
+let index = 3; //can't start on 0 or can't use backwards button
 
 //SVG
 const svgContainer = document.querySelector('#svg-container')
@@ -73,7 +73,7 @@ const cloneSeven = slide[6].cloneNode(true);
 
 // Add clones to start and end of slide group
 slideGroup.prepend(cloneFour, cloneFive, cloneSix, cloneSeven);
-slideGroup.append(cloneOne, cloneTwo, cloneThree, cloneFour); //check if need to append so many?
+slideGroup.append(cloneOne, cloneTwo, cloneThree, cloneFour); 
 
 // Set the slide width ie. amount to move
 //why -slideWidth? bc moving left
@@ -81,11 +81,6 @@ const width = slide[index].clientWidth;
 slideGroup.style.transform = `translateX(${-width * index}px)`; //this line sets the first image we see as index 3
 
 // Start automatic loop on page load
-// no need for explicit return bc not block code in curly braces
-// no need to do anon function inside setInterval bc nextSlide is in global scope
-// const startSlide = () => intervalId = setInterval(nextSlide, 2000); 
-// startSlide();
-
 let intervalId = setInterval(nextSlide, 2000); 
 
 // When click the arrows...
@@ -140,8 +135,14 @@ function playOrPause() {
 playPause.addEventListener('click', playOrPause)
 
 // Play/pause button mouseover event
-playPause.addEventListener('mouseout', () => playPause.style.opacity = '0');
-playPause.addEventListener('mouseover', () => playPause.style.opacity = '1');
+playPause.addEventListener('mouseout', (e) => {
+	e.target.style.opacity = '0';
+	e.target.style.transition = '.3s';
+});
+playPause.addEventListener('mouseover', (e) => {
+	e.target.style.opacity = '1';
+	e.target.style.transition = '.3s';
+});
 
 // Keyboard function
 function onKeydown(e) {
