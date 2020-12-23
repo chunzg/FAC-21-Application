@@ -73,6 +73,9 @@ h1 {
   font-weight: 900;
   padding: 20% 0;
 }
+.cut-out {
+  width: 10vw;
+}
 
 /* MENU */
 
@@ -165,15 +168,16 @@ h1 {
   z-index: 500;
 }
 #container_two {
-  background: url('img/marble8.jpg');
+  background: url('img/marble8b&w.jpg');
   background-size: cover;
+  height: 300px;
   text-align: center;
   display: flex;
   align-items: center; 
   justify-content: center;
 }
 .my-photo {
-  width: 30vw;
+  width: 25vw;
   margin: 5% 35%;
 }
 #sticky_scroll_one {
@@ -212,7 +216,7 @@ h1 {
   padding-bottom: 2%;
 }
 .carousel {
-  width: 100vw;
+  width: 98.8vw;
   height: auto;
   margin: auto;
   position: relative;
@@ -230,7 +234,7 @@ h1 {
   /* position: relative; */
 }
 .slide img {
-  width: 90%; 
+  width: 100%; 
 }
 .slide-controls {
   position: absolute;
@@ -274,7 +278,6 @@ main {
   font-size: 1em;
   letter-spacing: 0.8px;
   line-height: 1.9em;
-  padding-bottom: 5em;
 }
 .subheading {
   font-family: ChemyRetro, 'Paytone One';
@@ -318,7 +321,7 @@ main {
   flex-direction: column;
 }
 svg {
-  padding-bottom: 8%;
+  padding-bottom: 1%;
 }
 textPath {
   font-size: 2.5em;
