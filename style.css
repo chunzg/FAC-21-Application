@@ -70,7 +70,7 @@ h1 {
   letter-spacing: 1px;
   font-size: 4em;
   font-weight: 900;
-  padding: 10% 0;
+  padding: 15% 0 10%;
 }
 .cut-out {
   width: 10vw;
@@ -83,9 +83,11 @@ h1 {
 @keyframes fadeIn {
   0% {
     opacity: 0;
+    transform: translateX(-200%);
   }
   100% {
     opacity: 1;
+    transform: translateX(0%);
   }
 }
 
@@ -178,15 +180,6 @@ h1 {
   transform: rotate(-45deg);
   z-index: 500;
 }
-#container_two {
-  background: url('img/marble8b&w.jpg');
-  background-size: cover;
-  height: 300px;
-  text-align: center;
-  display: flex;
-  align-items: center; 
-  justify-content: center;
-}
 .my-photo {
   width: 25vw;
   margin: 5% 35%;
@@ -203,13 +196,9 @@ h1 {
 }
 
 /* INTRO */
-
-#intro div {
-  padding: 10% 34% 5%;
-}
 #intro p {
   text-align: center;
-  padding: 5%;
+  padding: 10% 0 5%;
   font-size: 1.3em;
   letter-spacing: 1px;
   line-height: 1.2em;
@@ -217,7 +206,7 @@ h1 {
 
 /* PICS */
 #container_three {
-  padding: 10% 0% 5%;
+  padding: 5% 0;
 }
 .caption {
   display: flex;
@@ -295,7 +284,7 @@ main {
 .text {
   display: flex;
   flex-direction: row;
-  padding-top: 5em;
+  padding-top: 5%;
 }
 #about {
   margin-left: 5%;
@@ -392,6 +381,14 @@ li {
   cursor: pointer;
   z-index: 100;
 }
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 
 /* Responsive */
 @media (min-width: 0px) and (max-width: 800px) {
@@ -463,19 +460,15 @@ li {
   h1 {
     font-size: 3em;
   }
+  #intro p {
+    font-size: 1em;
+  }
   .caption {
     font-size: .8em;
   }
   .carousel {
     width: auto;
     height: 50vh;
-    margin: auto;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   .slide {
     min-width: 100%;
