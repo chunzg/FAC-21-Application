@@ -74,11 +74,11 @@ h1 {
 }
 .cut-out {
   width: 10vw;
-  animation: fadeIn ease 2s;
-    -webkit-animation: fadeIn ease 2s;
-    -moz-animation: fadeIn ease 2s;
-    -o-animation: fadeIn ease 2s;
-    -ms-animation: fadeIn ease 2s;
+  animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+    -moz-animation: fadeIn ease 3s;
+    -o-animation: fadeIn ease 3s;
+    -ms-animation: fadeIn ease 3s;
 }
 @keyframes fadeIn {
   0% {
@@ -204,7 +204,7 @@ h1 {
   line-height: 1.2em;
 }
 
-/* PICS */
+/* CAROUSEL */
 #container_three {
   padding: 5% 0;
 }
@@ -215,7 +215,7 @@ h1 {
   padding-bottom: 2%;
 }
 .carousel {
-  width: 98.8vw;
+  width: 100vw;
   height: auto;
   margin: auto;
   position: relative;

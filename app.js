@@ -146,11 +146,11 @@ playPause.addEventListener('mouseover', (e) => {
 
 // Keyboard function
 function onKeydown(e) {
-	switch(e.key) {
-		case 'ArrowLeft':
+	switch(e.keyCode) {
+		case 37:
 			prevSlide();
 			break;
-		case 'ArrowRight':
+		case 39:
 			nextSlide(); //but shows right margin - need to fix
 			break;
 		case 32:
