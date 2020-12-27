@@ -151,7 +151,7 @@ function onKeydown(e) {
 			prevSlide();
 			break;
 		case 39:
-			nextSlide(); //but shows right margin - need to fix
+			nextSlide();
 			break;
 		case 32:
 			e.preventDefault();
@@ -169,20 +169,22 @@ const moveText = () => {
 		text.setAttribute('startOffset', scrollPercent * pathLength);//0.73*1830=1342 we want to do the same thing here but on the x axis
 	})
 }
-const mqMoveText = () => {
-	requestAnimationFrame(function() { 
-		var rect = svgContainer.getBoundingClientRect();
-		var scrollPercent = rect.y / window.innerHeight;
-		text.setAttribute('startOffset', scrollPercent * 800);
-	})
-}
+window.addEventListener('scroll', moveText);
 
-let mq = window.matchMedia('(max-width: 800px)');
-if(mq.matches) {
-	window.addEventListener('scroll', mqMoveText);
-} else {
-	window.addEventListener('scroll', moveText);
-}
+// const mqMoveText = () => {
+// 	requestAnimationFrame(function() { 
+// 		var rect = svgContainer.getBoundingClientRect();
+// 		var scrollPercent = rect.y / window.innerHeight;
+// 		text.setAttribute('startOffset', scrollPercent * 800);
+// 	})
+// }
+
+// let mq = window.matchMedia('(max-width: 800px)');
+// if(mq.matches) {
+// 	window.addEventListener('scroll', mqMoveText);
+// } else {
+// 	window.addEventListener('scroll', moveText);
+// }
 
 //-------------
 // Show/hide back to top button after a certain point
