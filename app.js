@@ -163,14 +163,14 @@ document.addEventListener('keydown', onKeydown);
 //-------------
 //Move text along the svg path according to the user's scroll position
 const moveText = () => {
-	requestAnimationFrame(function() { //similar to setInterval - this method makes it move
-		let scrollPercent;
+	requestAnimationFrame(function() {
+		let scrollPercent = []
 		svgContainer.forEach(x => {
-			scrollPercent = x.getBoundingClientRect().y / window.outerHeight; //484/660=0.73 divide domrect obj y by window height gives percentage representation of where element is in the viewport
+			scrollPercent.push(x.getBoundingClientRect().y / window.outerHeight);
 		})
-		textPath.forEach(x => {
-			x.setAttribute('startOffset', scrollPercent * pathLength);//0.73*1830=1342 we want to do the same thing here but on the x axis
-		})
+    textPath[0].setAttribute('startOffset', scrollPercent[0] * pathLength);
+    textPath[1].setAttribute('startOffset', scrollPercent[1] * pathLength);
+    textPath[2].setAttribute('startOffset', scrollPercent[2] * pathLength);
 	})
 }
 window.addEventListener('scroll', moveText);
