@@ -33,11 +33,11 @@ body {
 .switch {
   position: fixed;
   width: 58px;
-  height: 2em;
+  height: 2rem;
   cursor: pointer;
   margin: 1.5%;
   background-color: #333;
-  border-radius: 2em;
+  border-radius: 2rem;
   z-index: 2;
 }
 .switch input {
@@ -47,10 +47,10 @@ body {
 }
 .slider {
   position: absolute;
-  height: 1.5em;
-  width: 1.5em;
-  left: .25em;
-  bottom: .25em;
+  height: 1.5rem;
+  width: 1.5rem;
+  left: .25rem;
+  bottom: .25rem;
   border-radius: 50%;
   background-color: white;
   transition: .4s;
@@ -58,9 +58,9 @@ body {
 }
 input:checked + .slider {
   background-color: #f0e4e0;
-  -webkit-transform: translateX(1.6em);
-  -ms-transform: translateX(1.6em);
-  transform: translateX(1.6em);
+  -webkit-transform: translateX(1.6rem);
+  -ms-transform: translateX(1.6rem);
+  transform: translateX(1.6rem);
 }
 #container_one div {
   height: 100%;
@@ -72,9 +72,9 @@ input:checked + .slider {
   justify-content: center;
 }
 h1 {
-  letter-spacing: 1px;
-  font-size: 4em;
+  font-size: 4rem;
   font-weight: 500;
+  letter-spacing: .1em;
 }
 .cut-out {
   width: 10vw;
@@ -120,7 +120,7 @@ h1 {
 .active {
   display: flex;
   justify-content: space-evenly;
-  max-height: 1em;
+  max-height: 1rem;
   background: #faf3e7;
   transform: translateY(0%);
     -webkit-transform: translateY(0%);
@@ -132,7 +132,7 @@ h1 {
 .main-nav li a {
   text-decoration: none;
   font-weight: 600;
-  font-size: 1em;
+  font-size: 1rem;
   color: #333;
   border-bottom: solid 2px transparent;
   transition: border-bottom-color .2s ease-out;
@@ -152,18 +152,18 @@ h1 {
   top: 3%;
   right: 1.5%;
   cursor: pointer;
-  width: 2em;
-  height: 2em;
+  width: 2rem;
+  height: 2rem;
   z-index: 2;
 }
 .navbar-plus {
-  height: 2.5em;
+  height: 2.5rem;
   transition: all .7s ease-out;
 }
 .navbar-plus::after {
   content: '';
-  width: 1.7em;
-  height: .25em;
+  width: 1.7rem;
+  height: .25rem;
   background: #333;
   border-radius: .1em;
 }
@@ -189,8 +189,8 @@ h1 {
   align-items: center;
   text-align: center;
   padding: 5% 0;
-  font-size: 1.4em;
-  letter-spacing: .5px;
+  font-size: 1.4rem;
+  letter-spacing: .5em;
   line-height: 1.2em;
   font-weight: 450;
 }
@@ -207,6 +207,7 @@ h1 {
   padding: 2.5% 0;
 }
 .carousel {
+  display: none;
   width: 100vw;
   height: auto;
   margin: auto;
@@ -263,23 +264,19 @@ h1 {
 main {
   text-align: left;
   font-weight: 400;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   letter-spacing: .8px;
   line-height: 2em;
   padding-bottom: 10%;
 }
 .subheading {
-  font-size: 2.2em;
+  font-size: 3rem;
   line-height: 1.1em;
 }
 .text {
   display: flex;
   flex-direction: row;
   padding-top: 5%;
-}
-#myjourney, #whyfac {
-  margin: 0 5%;
-  width: 27.5%;
 }
 #whycode {
   width: 27.5%;
@@ -291,6 +288,7 @@ main {
 }
 #section-one, #section-three {
   margin: 0 5%;
+  padding-left: 27.5%;
   width: 61%;
 }
 #section-two {
@@ -304,16 +302,13 @@ footer {
   flex-direction: column;
   text-align: center;
 }
-svg {
-  padding-bottom: 1%;
-}
 textPath {
-  font-size: 4em;
+  font-size: 4rem;
   font-weight: 450;
   fill: #333;
 }
 footer ul, address {
-  line-height: 3.5em;
+  line-height: 3.5rem;
   list-style-type: none;
 }
 li {
@@ -321,7 +316,7 @@ li {
 }
 .main-links img {
   text-decoration: none;
-  height: 1.9em;
+  height: 1.9rem;
   border-bottom: solid 2px transparent;
   transition: border-bottom-color .2s ease-out;
     -webkit-transition: border-bottom-color .2s ease-out;
@@ -335,12 +330,12 @@ li {
 .contact {
   margin-top: 3%;
   list-style-type: none;
-  font-size: 1.3em;
+  font-size: 1.3rem;
   font-weight: 450;
 }
 .copyright {
   padding: 7% 0 2%;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 450;
   align-items: flex-end;
 }
@@ -348,7 +343,7 @@ li {
   display: none;
   position: fixed;
   float: right;
-  width: 2em;
+  width: 2rem;
   right: 1.5%;
   bottom: 3%;
   cursor: pointer;
@@ -368,27 +363,27 @@ li {
   .switch {
     margin: 2.4%;
     width: 48px;
-    height: 1.7em;
+    height: 1.7rem;
   }
   .slider {
-    height: 1.2em;
-    width: 1.2em;
-    left: .25em;
-    bottom: .25em;
+    height: 1.2rem;
+    width: 1.2rem;
+    left: .25rem;
+    bottom: .25rem;
   }
   input:checked + .slider {
-    -webkit-transform: translateX(1.3em);
-    -ms-transform: translateX(1.3em);
-    transform: translateX(1.3em);
+    -webkit-transform: translateX(1.3rem);
+    -ms-transform: translateX(1.3rem);
+    transform: translateX(1.3rem);
   }
   .navbar-button {
     top: 4%;
     right: 4%;
-    width: .5em;
-    height: .5em;
+    width: .5rem;
+    height: .5rem;
   }
   .navbar-plus {
-    height: 2em;
+    height: 2rem;
   }
   .main-nav {
     flex-direction: column;
@@ -410,7 +405,7 @@ li {
   h1 {
     width: 60vw;
     text-align: center;
-    font-size: 3em;
+    font-size: 3rem;
   }
   .cut-out {
     width: 22vw;
@@ -444,7 +439,7 @@ li {
     display: none;
   }
   .subheading {
-    font-size: 2em !important;
+    font-size: 2.5rem !important;
     width: 100% !important;
     text-align: center !important;
     margin: 5% 0% !important;
@@ -453,10 +448,10 @@ li {
     padding: 7% 0;
   }
   textPath {
-    font-size: 7em;
+    font-size: 7rem;
   }
   footer {
-    font-size: .8em;
+    font-size: .7em;
   }
   .copyright {
     padding-top: 10%;
