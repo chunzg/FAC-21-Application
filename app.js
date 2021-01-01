@@ -27,6 +27,12 @@ const pathLength = path.getTotalLength()
 const up = document.querySelector('#up img');
 
 //--------------------------------------------
+//Reload page immediately after first load (temp fix for carousel issue?)
+if(location.href.indexOf('reload') === -1) { //location.href returns a string
+   location.href += '?reload';
+}
+
+//--------------------------------------------
 //Invert background colours
 function invertColours() {
 	groupOne.forEach(x => {
