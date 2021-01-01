@@ -168,21 +168,28 @@ const moveText = () => {
 		svgContainer.forEach(x => {
 			scrollPercent.push(x.getBoundingClientRect().y / window.outerHeight);
 		})
-    textPath[0].setAttribute('startOffset', scrollPercent[0] * pathLength);
-    textPath[1].setAttribute('startOffset', scrollPercent[1] * pathLength);
-    textPath[2].setAttribute('startOffset', scrollPercent[2] * pathLength);
+		textPath[0].setAttribute('startOffset', scrollPercent[0] * pathLength);
+		textPath[1].setAttribute('startOffset', scrollPercent[1] * pathLength);
+		textPath[2].setAttribute('startOffset', scrollPercent[2] * pathLength);
 	})
 }
 window.addEventListener('scroll', moveText);
 
-// const moveText = () => {
-// 	requestAnimationFrame(function() { 
-// 		var rect = svgContainer.getBoundingClientRect();
-// 		var scrollPercent = rect.y / window.innerHeight;
-// 		textPath.setAttribute('startOffset', scrollPercent * pathLength);
-// 	})
-// }
-// window.addEventListener('scroll', moveText);
+//-------------
+//TYPING EFFECT
+let str = 'Thank you for reading!'
+let i = 0;
+let txt;
+
+function typeWriter() {
+	txt = str.slice(0, ++i); //++i refers to the value after increment
+	if(txt === str) {
+		i = 0;
+	}
+	document.querySelector('.fa-layers-text').textContent = txt;
+	setTimeout(typeWriter, 200)
+}
+typeWriter()
 
 //-------------
 // Show/hide back to top button after a certain point
