@@ -335,9 +335,9 @@ footer ul, address {
   list-style-type: none;
   display: flex;
   justify-content: space-evenly;
-}
-li {
   font-style: normal;
+}
+.main-links {
   padding-top: 3%;
 }
 .main-links img {
