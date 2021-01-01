@@ -210,7 +210,6 @@ h1 {
   padding: 2.5% 0;
 }
 .carousel {
-  display: none;
   width: 100vw;
   height: auto;
   margin: auto;
@@ -339,6 +338,7 @@ footer ul, address {
 }
 li {
   font-style: normal;
+  padding-top: 3%;
 }
 .main-links img {
   text-decoration: none;
