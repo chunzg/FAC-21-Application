@@ -28,8 +28,14 @@ const up = document.querySelector('#up img');
 
 //--------------------------------------------
 //Reload page immediately after first load (temp fix for carousel issue?)
-if(location.href.indexOf('reload') === -1) { //location.href returns a string
-   location.href += '?reload';
+// if(location.href.indexOf('reload') === -1) { //location.href returns a string
+//    location.href += '?reload';
+// }
+window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
 }
 
 //--------------------------------------------
