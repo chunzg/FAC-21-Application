@@ -406,7 +406,7 @@ footer ul, address {
   h1 {
     width: 60vw;
     text-align: center;
-    font-size: 3rem;
+    font-size: 4rem;
   }
   .cut-out {
     width: 22vw;
@@ -480,10 +480,9 @@ footer ul, address {
   .text1 { grid-area: text1; padding: 0 10%;}
   .text2 { grid-area: text2; padding: 0 10%;}
   .text3 { grid-area: text3; padding: 0 10%;}
-  footer {
+  footer ul {
     display: flex;
     flex-direction: column;
-    text-align: center;
   }
   .cut-out-end {
     width: 13vw;

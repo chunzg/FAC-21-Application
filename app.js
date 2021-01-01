@@ -84,6 +84,7 @@ slideGroup.style.transform = `translateX(${-width * index}px)`; //this line sets
 let intervalId
 const startSlide = () => intervalId = setInterval(nextSlide, 2000); 
 window.addEventListener('load', startSlide)
+document.addEventListener("DOMContentLoaded", startSlide);
 
 // When click the arrows...
 // Move to next slide
