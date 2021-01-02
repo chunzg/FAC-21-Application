@@ -318,7 +318,7 @@ footer {
     ". bubble"
     "me bubble"
     "me .";
-  padding: 0 40%;
+  padding: 0 45%;
 }
 .me { grid-area: me; }
 .bubble { 
@@ -483,6 +483,9 @@ footer ul, address {
   footer ul {
     display: flex;
     flex-direction: column;
+  }
+  .grid-container-two {
+    padding: 0 43%;
   }
   .cut-out-end {
     width: 13vw;
