@@ -10,7 +10,7 @@ const navLinks = document.querySelectorAll('.nav-link');
 
 // CAROUSEL
 const carousel = document.querySelector('.carousel');
-const slideGroup = document.querySelector('.slides');
+const slideGroup = document.querySelector('.slides'); //difference between this and slide? 
 const nextBtn = document.querySelector('.next-btn');
 const prevBtn = document.querySelector('.prev-btn');
 let playPause = document.querySelector('.pause');
@@ -90,7 +90,13 @@ const width = slide[index].clientWidth;
 slideGroup.style.transform = `translateX(${-width * index}px)`; //this line sets the first image we see as index 3
 
 // Start automatic loop on page load
-let intervalId = setInterval(nextSlide, 2000); 
+let intervalId
+const startSlide = () => intervalId = setInterval(nextSlide, 2000); 
+window.addEventListener('load', () => {
+	console.log('worked')
+})
+startSlide();
+// document.addEventListener("DOMContentLoaded", startSlide);
 
 // When click the arrows...
 // Move to next slide
