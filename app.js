@@ -90,10 +90,7 @@ const width = slide[index].clientWidth;
 slideGroup.style.transform = `translateX(${-width * index}px)`; //this line sets the first image we see as index 3
 
 // Start automatic loop on page load
-let intervalId
-const startSlide = () => intervalId = setInterval(nextSlide, 2000); 
-window.addEventListener('load', startSlide)
-document.addEventListener("DOMContentLoaded", startSlide);
+let intervalId = setInterval(nextSlide, 2000); 
 
 // When click the arrows...
 // Move to next slide
