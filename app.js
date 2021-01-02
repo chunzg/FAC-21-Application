@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	// Set the slide width ie. amount to move
 	//why -slideWidth? bc moving left
 	const width = slide[index].clientWidth; 
-	slideGroup.style.transform = `translateX(${-width * index}px)`; //this line sets the first image we see as index 3
+	slideGroup.style.transform = `translateX(${-width * index}px)`; //this line sets the first image we see as index 3 bc it has moved 3 slides already on load (bc no transition)
 
 	// Start automatic loop on page load
 	let intervalId;
