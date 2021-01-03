@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	//SVG
 	const svgContainer = document.querySelectorAll('.svg-container')
 	const textPath = document.querySelectorAll('.text-path')
-	const path = document.querySelector('#wave');
+	const path = document.querySelector('#wave, #wave2, #wave3');
 	const pathLength = path.getTotalLength()
 
 	//BACK TO TOP
