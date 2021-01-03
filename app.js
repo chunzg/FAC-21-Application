@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener('DOMContentLoaded', function(){
 	// rest of code here
 	//BG COLOURS
 	const slider = document.querySelector('.switch');
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	const nextBtn = document.querySelector('.next-btn');
 	const prevBtn = document.querySelector('.prev-btn');
 	let playPause = document.querySelector('.pause');
-	let slide = document.querySelectorAll('.slide');
+	let slide = document.querySelectorAll('.slide'); //could also have prepend/append slideclones to this, and then maybe don't need to define again inside transitionend function or next prev functions
 	let index = 3; //can't start on 0 or can't use backwards button
 
 	//SVG
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function(){
 			x.style.transition = '.4s ease-in';
 		})
 	}
-	slider.addEventListener('mousedown', invertColours); //click doesn't work here?
+	slider.addEventListener('mousedown', invertColours); //click doesn't work here? diff between mousedown and click?
 
 	//----------
 	//Show/hide menu
@@ -94,13 +94,14 @@ document.addEventListener("DOMContentLoaded", function(){
 	// Start automatic loop on page load
 	let intervalId;
 	const startSlide = () => intervalId = setInterval(nextSlide, 2000); 
-	window.addEventListener('load', startSlide);
-	// startSlide();
-	// document.addEventListener("DOMContentLoaded", startSlide);
+	// window.addEventListener('load', startSlide);
+	startSlide();
+	// document.addEventListener('DOMContentLoaded', startSlide);
 
 	// When click the arrows...
 	// Move to next slide
 	function nextSlide() {
+		console.log('nextSlide fired')
 		slide = document.querySelectorAll('.slide');
 		index >= slide.length - 4 ? false : index++; //return false means don't continue 
 		slideGroup.style.transform = `translateX(${-width * index}px)`;//needs to be *index bc it signifies the position we are moving it to the left from the starting point. 
@@ -108,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	}
 	// Move to previous slide
 	function prevSlide() {
+		console.log('prevSlide fired')
 		slide = document.querySelectorAll('.slide');
 		index <= 0 ? false : index--; //false is to stop it from going off the carousel
 		slideGroup.style.transform = `translateX(${-width * index}px)`;
@@ -124,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	slideGroup.addEventListener('transitionend', () => { //transitionend means each time it moves once. use transitionend bc used slideGroup.style.transition above
 		slide = document.querySelectorAll('.slide'); //has to be defined again inside function, bc in global scope has only 7 slides. Bc prepend and append happened AFTER the first time 'slide' was assigned. 
+		console.log('transitionend fired')
 		if(slide[index].id === 'clone1') {
 			slideGroup.style.transition = 'ease-in';
 			index = 3;
@@ -138,6 +141,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	// When press play/pause button, start/stop and change icon
 	function playOrPause() {
+		console.log('playpause fired')
 		if(!intervalId) {
 			playPause.src = 'img/pause.png';
 			intervalId = setInterval(nextSlide, 2000); 
