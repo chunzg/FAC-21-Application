@@ -206,15 +206,15 @@ h1 {
 }
 
 /* CAROUSEL */
-#container_three {
-  padding: 5% 0%;
-}
 .carousel {
   width: 70%;
   height: auto;
-  margin: 0% 15%;
+  margin: auto;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .slides {
   display: flex;
@@ -255,12 +255,11 @@ h1 {
 .play, 
 .pause {
   display: none;
+  cursor: pointer;
   position: absolute;
-  width: 4vw;
+  width: 2vw;
   outline: none;
-  top: 54%;
-  transform: translateY(-100%);
-  left: 48%;
+  padding: 15% 25%;
 }
 
 /* TEXT */
@@ -416,14 +415,14 @@ footer ul, address {
     width: 70%;
   }
   .carousel {
-    width: auto;
-    height: 50vh;
+    width: 90%;
   }
-  .slide {
-    min-width: 100%;
+  .slide-controls img {
+    width: 4vw;
   }
-  .slide img {
-    width: 100%; 
+  .play, 
+  .pause {
+    width: 4vw;
   }
   .scroll-text {
     padding-top: 8%;
