@@ -207,35 +207,35 @@ h1 {
 
 /* CAROUSEL */
 #container_three {
-  padding: 2.5% 0;
+  padding: 5% 0%;
 }
 .carousel {
-  width: 100%;
+  width: 70%;
   height: auto;
-  margin: auto;
+  margin: 0% 15%;
   position: relative;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .slides {
   display: flex;
+  height: 100%;
 } 
 .slide {
-  min-width: 25%;
+  min-width: 100%;
+  position: relative;
 }
 .slide img {
   width: 100%; 
-}
+} 
 .slide-controls {
-  display: flex;
-  justify-content: space-between;
   position: absolute;
   top: 50%;
-  transform: translateY(-50%); /* it is moving up 50% of the button itself, to make it completely centered */
+  transform: translateY(-50%);
   background: transparent;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border: 0;
 }
 .slide-controls img {
@@ -254,12 +254,13 @@ h1 {
 }
 .play, 
 .pause {
-  opacity: 1;
-  cursor: pointer;
+  display: none;
   position: absolute;
-  width: 2vw;
+  width: 4vw;
   outline: none;
-  padding: 15% 25%;
+  top: 54%;
+  transform: translateY(-100%);
+  left: 48%;
 }
 
 /* TEXT */

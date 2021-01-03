@@ -1,33 +1,4 @@
-document.addEventListener('DOMContentLoaded', function(){
-	// rest of code here
-	//BG COLOURS
-	const slider = document.querySelector('.switch');
-	const groupOne = document.querySelectorAll('.original');
-	const groupTwo = document.querySelectorAll('.original-two');
-
-	//MENU 
-	const mainNav = document.querySelector('.main-nav');
-	const navBtn = document.querySelector('.navbar-plus');
-	const navLinks = document.querySelectorAll('.nav-link');
-
-	// CAROUSEL
-	const carousel = document.querySelector('.carousel');
-	const slideGroup = document.querySelector('.slides'); //difference between this and slide? 
-	const nextBtn = document.querySelector('.next-btn');
-	const prevBtn = document.querySelector('.prev-btn');
-	let playPause = document.querySelector('.pause');
-	let slide = document.querySelectorAll('.slide'); //could also have prepend/append slideclones to this, and then maybe don't need to define again inside transitionend function or next prev functions
-	let index = 3; //can't start on 0 or can't use backwards button
-
-	//SVG
-	const svgContainer = document.querySelectorAll('.svg-container')
-	const textPath = document.querySelectorAll('.text-path')
-	const path = document.querySelector('#wave, #wave2, #wave3');
-	const pathLength = path.getTotalLength()
-
-	//BACK TO TOP
-	const up = document.querySelector('#up img');
-
+document.addEventListener('DOMContentLoaded', function() {
 	//--------------------------------------------
 	//Reload page immediately after first load (temp fix for carousel issue?)
 	// window.onload = function() {
@@ -39,6 +10,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	//--------------------------------------------
 	//Invert background colours
+	const slider = document.querySelector('.switch');
+	const groupOne = document.querySelectorAll('.original');
+	const groupTwo = document.querySelectorAll('.original-two');
+
 	function invertColours() {
 		groupOne.forEach(x => {
 			x.classList.toggle('inverted');
@@ -53,6 +28,10 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	//----------
 	//Show/hide menu
+	const mainNav = document.querySelector('.main-nav');
+	const navBtn = document.querySelector('.navbar-plus');
+	const navLinks = document.querySelectorAll('.nav-link');
+
 	function navBtnRotate() {
 		navBtn.addEventListener('click', (e) => {
 			if(mainNav.classList.toggle('active')){
@@ -73,114 +52,149 @@ document.addEventListener('DOMContentLoaded', function(){
 	})
 
 	//--------------
-	// Clone images for carousel
-	const cloneOne = slide[0].cloneNode(true);
-	const cloneTwo = slide[1].cloneNode(true);
-	const cloneThree = slide[2].cloneNode(true);
-	const cloneFour = slide[3].cloneNode(true);
-	const cloneFive = slide[4].cloneNode(true);
-	const cloneSix = slide[5].cloneNode(true);
-	const cloneSeven = slide[6].cloneNode(true);
+// CAROUSEL VARIABLES
+const slideContainer = document.querySelector('.carousel');
+const slideGroup = document.querySelector('.slides');
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
+const interval = 3250;
+const playPause = document.querySelector('.pause');
+let slides = document.querySelectorAll('.slide');
+let index = 1; //bc 0 is clone of last slide
+let slideId; // this is later set to be the intervalID parameter. 
+let playing;
 
-	// Add clones to start and end of slide group
-	slideGroup.prepend(cloneFour, cloneFive, cloneSix, cloneSeven);
-	slideGroup.append(cloneOne, cloneTwo, cloneThree, cloneFour); 
+// CLONE FIRST AND LAST CAROUSEL IMAGE
+const firstClone = slides[0].cloneNode(true);
+const lastClone = slides[slides.length - 1].cloneNode(true);
 
-	// Set the slide width ie. amount to move
-	//why -slideWidth? bc moving left
-	const width = slide[index].clientWidth; 
-	slideGroup.style.transform = `translateX(${-width * index}px)`; //this line sets the first image we see as index 3 bc it has moved 3 slides already on load (bc no transition)
+// SET IDS FOR THESE TWO CLONES
+firstClone.id = 'first-clone'; 
+lastClone.id = 'last-clone';
 
-	// Start automatic loop on page load
-	let intervalId;
-	const startSlide = () => intervalId = setInterval(nextSlide, 2000); 
-	// window.addEventListener('load', startSlide);
-	startSlide();
-	// document.addEventListener('DOMContentLoaded', startSlide);
+// PLACE CLONES AT START AND END OF SLIDES GROUP
+slideGroup.append(firstClone);
+slideGroup.prepend(lastClone);
 
-	// When click the arrows...
-	// Move to next slide
-	function nextSlide() {
-		console.log('nextSlide fired')
-		slide = document.querySelectorAll('.slide');
-		index >= slide.length - 4 ? false : index++; //return false means don't continue 
-		slideGroup.style.transform = `translateX(${-width * index}px)`;//needs to be *index bc it signifies the position we are moving it to the left from the starting point. 
-		slideGroup.style.transition = '1s'; 
+// SET SLIDE WIDTH
+const slideWidth = slides[index].clientWidth;
+
+// SET THE DISTANCE OF THE IMAGE MOVING HORIZONTALLY
+slideGroup.style.transform = `translateX(${-slideWidth * index}px)`;
+
+// FUNCTION TO START SLIDESHOW
+const startSlide = () => {
+	playing = true;
+	return slideId = setInterval(() => { // WHY DO I HAVE TO RETURN IT FOR IT TO WORK? //is this example of a closure?
+		moveToNextSlide();
+	}, interval);
+};
+
+// GET ALL OF THE SLIDES
+const getSlides = () => document.querySelectorAll('.slide');
+
+// WHEN THE CSS TRANSITION ENDS, KEEP GOING
+slideGroup.addEventListener('transitionend', () => {
+	slides = getSlides();
+	if (slides[index].id === firstClone.id) {
+		slideGroup.style.transition = 'none';
+		index = 1;
+		slideGroup.style.transform = `translateX(${-slideWidth * index}px)`;
 	}
-	// Move to previous slide
-	function prevSlide() {
-		console.log('prevSlide fired')
-		slide = document.querySelectorAll('.slide');
-		index <= 0 ? false : index--; //false is to stop it from going off the carousel
-		slideGroup.style.transform = `translateX(${-width * index}px)`;
-		slideGroup.style.transition = '1s';
+	if (slides[index].id === lastClone.id) {
+		slideGroup.style.transition = 'none';
+		index = slides.length - 2;
+		slideGroup.style.transform = `translateX(${-slideWidth * index}px)`;
 	}
-	nextBtn.addEventListener('click', nextSlide);
-	prevBtn.addEventListener('click', prevSlide);
+});
 
-	//However it will stop at the last slide, so...
-	//When loop ends, keep going
-	//Set ids for the clones to differentiate from the others, or loop doesnt work
-	cloneOne.id = 'clone1';
-	cloneFive.id = 'clone5';
+// FUNCTION FOR MOVING TO NEXT SLIDE
+const moveToNextSlide = () => {
+	slides = getSlides();
+	if (index >= slides.length - 1) return;
+	index++;
+	slideGroup.style.transform = `translateX(${-slideWidth * index}px)`;
+	slideGroup.style.transition = '.8s';
+}
 
-	slideGroup.addEventListener('transitionend', () => { //transitionend means each time it moves once. use transitionend bc used slideGroup.style.transition above
-		slide = document.querySelectorAll('.slide'); //has to be defined again inside function, bc in global scope has only 7 slides. Bc prepend and append happened AFTER the first time 'slide' was assigned. 
-		console.log('transitionend fired')
-		if(slide[index].id === 'clone1') {
-			slideGroup.style.transition = 'ease-in';
-			index = 3;
-			slideGroup.style.transform = `translateX(${-width * index}px)`; 
-		}
-		if(slide[index].id === 'clone5') { //for when we click backwards and lands on clone5
-			slideGroup.style.transition = 'none';
-			index = 7;
-			slideGroup.style.transform = `translateX(${-width * index}px)`;
-		}
-	});
+// FUNCTION FOR MOVING TO PREVIOUS SLIDE
+const moveToPrevSlide = () => {
+	slides = getSlides();
+	if (index <= 0) return;
+	index--;
+	slideGroup.style.transform = `translateX(${-slideWidth * index}px)`;
+	slideGroup.style.transition = '.7s';
+}
 
-	// When press play/pause button, start/stop and change icon
-	function playOrPause() {
-		console.log('playpause fired')
-		if(!intervalId) {
-			playPause.src = 'img/pause.png';
-			intervalId = setInterval(nextSlide, 2000); 
-		} else {
-			playPause.src = 'img/play.png';
-			clearInterval(intervalId);
-			intervalId = null; //bc first condition depends if !intervalId 
-		}
+// WHEN CLICK THE ARROWS, MOVE TO NEXT OR PREVIOUS SLIDES
+nextBtn.addEventListener('click', moveToNextSlide);
+prevBtn.addEventListener('click', moveToPrevSlide);
+
+// START AUTOMATIC SLIDESHOW 
+startSlide();
+
+// PLAY PAUSE BUTTON - slideshow start/stop
+playPause.addEventListener('click', () => {
+	if(!slideId) {
+		slideId = startSlide(); // WHY DO I HAVE TO SPECIFY SLIDE ID = STARTSLIDE. WHY CAN'T IT JUST BE STARTSLIDE(). 
+		console.log('started');
+	} else {
+		clearInterval(slideId);
+		slideId = null;
+		console.log('stopped');
 	}
-	playPause.addEventListener('click', playOrPause)
+});
 
-	// Play/pause button mouseover event
-	playPause.addEventListener('mouseout', (e) => {
-		e.target.style.opacity = '0';
-		e.target.style.transition = '.3s';
-	});
-	playPause.addEventListener('mouseover', (e) => {
-		e.target.style.opacity = '1';
-		e.target.style.transition = '.3s';
-	});
-
-	// Keyboard function
-	function onKeydown(e) {
-		switch(e.keyCode) {
-			case 37:
-				prevSlide();
-				break;
-			case 39:
-				nextSlide();
-				break;
-			case 32:
-				e.preventDefault();
-				playOrPause();
-		}
+// PLAY PAUSE BUTTON - image change
+playPause.addEventListener('click', function () { //why function not arrow works here???
+	var button = this; 
+	if(button.className != 'pause') {
+		button.src = 'img/pause.png';
+		button.className = 'pause';
+	} else if (button.className == 'pause') {
+		button.src = 'img/play.png';
+		button.className = 'play';
 	}
-	document.addEventListener('keydown', onKeydown);
+	return false;
+});
+
+// PLAY PAUSE BUTTON - mouseover event
+slideContainer.addEventListener('mouseout', () => {
+	playPause.style.display = 'none';
+})
+slideContainer.addEventListener('mouseover', () => {
+	playPause.style.display = 'block';
+})
+
+
+// KEYBOARD FUNCTION
+document.onkeydown = function (event) {
+	event = event || window.event;
+	switch (event.keyCode) {
+		case 37:
+			leftArrowPressed();
+			break;
+		case 39:
+			rightArrowPressed();
+			break;
+	}
+}
+
+function leftArrowPressed() {
+	moveToPrevSlide();
+}
+function rightArrowPressed() {
+	moveToNextSlide();
+}
+
 
 	//-------------
 	//Move text along the svg path according to the user's scroll position
+	const svgContainer = document.querySelectorAll('.svg-container')
+	const textPath = document.querySelectorAll('.text-path')
+	const path = document.querySelector('#wave, #wave2, #wave3');
+	const pathLength = path.getTotalLength()
+	
 	const moveText = () => {
 		requestAnimationFrame(function() {
 			let scrollPercent = []
@@ -212,6 +226,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	//-------------
 	// Show/hide back to top button after a certain point
+	const up = document.querySelector('#up img');
+
 	const showBackToTop = () => {
 		if(window.pageYOffset > 500) {
 			up.style.display = 'block';
