@@ -18,23 +18,10 @@ body {
 #container_one {
   height: 100vh;
 }
-.original {
-  /* background-color: #d8d4ff; */
+#sticky_scroll_two {
   background-color: #faf3e7;
 }
-.inverted {
-  background-color: #faf3e7;
-}
-.original-two {
-  background-color: #faf3e7;
-}
-.inverted-two {
-  background-color: #faf3e7;
-}
-.no-highlight {
-  color: red;
-}
-.highlight-on {
+.highlight {
   background: rgb(219, 255, 153);
 }
 .switch {
@@ -307,7 +294,6 @@ footer {
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding-top: 7%;
 }
 .cut-out-end {
   width: 8vw;
@@ -332,42 +318,29 @@ footer {
   font-size: .15em; 
   color: white;
 }
-.grid-container-three {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 8rem 0;
-  grid-template-areas:
-    "logo-1 logo-2 logo-3"
-    "contact contact contact"
+.main-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style-type: none;
+  padding-bottom: 10%;
 }
-.logo-1 { grid-area: logo-1; }
-.logo-2 { grid-area: logo-2; }
-.logo-3 { grid-area: logo-3; }
-.logo img {
-  height: 2rem;
-  border-bottom: solid 2px transparent;
-  transition: border-bottom-color .2s ease-out;
-    -webkit-transition: border-bottom-color .2s ease-out;
-    -moz-transition: border-bottom-color .2s ease-out;
-    -ms-transition: border-bottom-color .2s ease-out;
-    -o-transition: border-bottom-color .2s ease-out;
+.fcc, .github {
+  height: 2em;
+  padding: 0 2em;
 }
-.logo a:hover {
-  border-bottom: solid 3px #333;
+.codewars {
+  height: 2.5em;
 }
-.contact { grid-area: contact;}
-address {
-  font-style: normal;
-  font-size: 1.5rem;
-  padding-bottom: 1%;
-}
-.copyright { 
+.extra { 
   float: left;
   left: 1.5%;
   text-align: left;
   bottom: .5%;
   position: absolute;
+}
+address {
+  font-style: normal;
 }
 #up img {
   display: none;
@@ -434,19 +407,14 @@ address {
   textPath {
     font-size: 8rem;
   }
-  .grid-container-three {
+  .main-links {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
   }
-  .logo img {
-    height: 1.7em;
+  .main-links li {
+    padding-bottom: 2%;
   }
-  address {
-    font-size: 1.1em;
-    padding: 10% 0 3%;
-  }
-  .copyright {
+  .extra {
     font-size: .8em;
   }
 }
@@ -501,9 +469,6 @@ address {
   }
   .bubble {
     font-size: 19vw; 
-  }
-  address {
-    font-size: 1rem;
   }
 }
   

@@ -23,10 +23,10 @@
     </div>
     <nav class='menu'>
       <ul class='main-nav'>
-          <li class='nav-link'><a href='#aboutme'>About</a></li>
-          <li class='nav-link'><a href='#whycode'>Why Coding</a></li>
-          <li class='nav-link'><a href='#whyfac'>Why FAC</a></li>
-          <li class='nav-link'><a href='#footer'>Links & Contact</a></li>
+          <li class='nav-link highlight'><a href='#aboutme'>About</a></li>
+          <li class='nav-link highlight'><a href='#whycode'>Why Coding</a></li>
+          <li class='nav-link highlight'><a href='#whyfac'>Why FAC</a></li>
+          <li class='nav-link highlight'><a href='#footer'>Links & Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -36,7 +36,7 @@
   <div id='sticky_scroll_one'>
     <section id='container_one' class='original'>
       <div>
-        <img class='cut-out' src='img/me_cut.png'>
+        <img class='cut-out' src='img/me_cut.png'><br>
         <h1 class='highlight'>Hi, this is Chun</h1>
       </div>
     </section>
@@ -44,7 +44,7 @@
 
   <div id='sticky_scroll_two'> 
 <!-- INTRO -->
-    <section id='container_two' class='original-two'>
+    <section id='container_two'>
         <ul id='aboutme' class='highlight'>
           <li><i>About me 1</i><br>lorem ipsum</li>
           <li><i>About me 2</i><br>lorem ipsum</li>
@@ -54,7 +54,7 @@
     
 <!-- PICTURES -->
 
-    <section id='container_three' class='original-two'>
+    <section id='container_three'>
       <section class='carousel'>
 
         <section class='slides'>
@@ -65,7 +65,6 @@
             <div class='slide'><img src='img/spain5.jpeg' alt=''></div>
             <div class='slide'><img src='img/spain6.jpeg' alt=''></div>
             <div class='slide'><img src='img/spain7.jpeg' alt=''></div>
-            
         </section>
   
         <section class='slide-controls'>
@@ -77,7 +76,7 @@
     </section>
 
 <!-- TEXT -->
-<main class='grid-container original-two'>
+<main class='grid-container'>
   <div class='svg'>
     <section class='scroll-text'>
       <svg class='svg-container' viewBox='0 0 1806 320'> <!--dimensions of the svg area-->
@@ -171,7 +170,7 @@
 </main>
 
 <!-- FOOTER -->
-    <footer class='original' id='footer'>
+    <footer id='footer'>
 
       <div class='grid-container-two'>
         <span class='me'> 
@@ -183,22 +182,19 @@
         </span>
       </div>
 
-      <div class='grid-container-three'>
-        <div class='logo logo-1'>
-          <a href='https://github.com/chunzg/FAC-21-Application' target='_blank'><img src='img/github.png' alt=''></a>
-        </div>
-        <div class='logo logo-2'>
-          <a href='https://www.codewars.com/users/chunzg' target='_blank'><img src='img/codewars.png' alt=''></a>
-        </div>
-        <div class='logo logo-3'>
-          <a href='https://www.freecodecamp.org/chunzg' target='_blank'><img src='img/fcc.png' alt=''></a>
-        </div>
-        <div class='contact highlight'>
-          <address>chunzhang53@gmail.com</address>
-        </div>
-      </div>
+      <nav class='links'>
+        <ul class='main-links'>
+          <li><a href='https://github.com/chunzg/FAC-21-Application' target='_blank'><img class='github' src='img/github.png' alt=''></a></li>
+          <li><a href='https://www.freecodecamp.org/chunzg' target='_blank'><img class='fcc' src='img/fcc.svg' alt=''></a></li>
+          <li><a href='https://www.codewars.com/users/chunzg' target='_blank'><img class='codewars' src='img/codewars.png' alt=''></a></li>
+        </ul>
+      </nav>
 
-      <small class='copyright highlight'>&#169;2021 Chun Zhang</small>
+      <div class='extra highlight'>
+        <small class='contact'>chunzhang53@gmail.com</small><br>
+        <small class='copyright'>&#169;2021 Chun Zhang</small>
+      </div>
+      
       <a href='#top' id='up'>
         <img src='img/finger.png' alt='back to top'>
         <span class='sr-only'>Back to top</span>

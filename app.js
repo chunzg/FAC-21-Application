@@ -11,12 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	//--------------------------------------------
 	//Invert background colours
 	const slider = document.querySelector('.switch');
-	const words = document.querySelectorAll('.highlight');
-	// const groupTwo = document.querySelectorAll('.original-two');
+	const highlight = document.querySelectorAll('.highlight');
 
 	function invertColours() {
-		words.forEach(x => {
-			x.classList.toggle('highlight-on');
+		highlight.forEach(x => {
+			x.classList.toggle('highlight');
 			x.style.transition = '.4s ease-in';
 		})
 	}
