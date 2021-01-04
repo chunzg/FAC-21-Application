@@ -20,19 +20,22 @@ body {
 }
 .original {
   /* background-color: #d8d4ff; */
-  background-color:#faf3e7;
+  background-color: #faf3e7;
 }
 .inverted {
   background-color: #faf3e7;
 }
 .original-two {
-  /* background-color: #d0c7c4; */
-  /* background-color: #ffffc5; */
-  /* background-color: #f5f5bb; */
   background-color: #faf3e7;
 }
 .inverted-two {
-  background-color: rgb(164, 238, 255);
+  background-color: #faf3e7;
+}
+.no-highlight {
+  color: red;
+}
+.highlight-on {
+  background: rgb(219, 255, 153);
 }
 .switch {
   position: fixed;
@@ -79,6 +82,7 @@ h1 {
   font-size: 5rem;
   font-weight: 500;
   letter-spacing: .1em;
+  padding-top: 1%;
 }
 .cut-out {
   width: 10vw;
@@ -168,7 +172,6 @@ h1 {
   content: '';
   width: 1.7rem;
   height: .25rem;
-  background: #333;
   border-radius: .1em;
 }
 .navbar-plus::after {
@@ -271,7 +274,6 @@ main {
   letter-spacing: .8px;
   line-height: 2em;
   padding-bottom: 7%;
-  color: red;
 }
 .scroll-text {
   font-size: 4rem;
@@ -325,11 +327,10 @@ footer {
 .bubble { 
   grid-area: bubble; 
   font-size: 12vw; 
-  color: rgb(225, 228, 230);
 }
 .fa-layers-text{ 
   font-size: .15em; 
-  color: red;
+  color: white;
 }
 .grid-container-three {
   display: grid;
@@ -359,14 +360,14 @@ footer {
 address {
   font-style: normal;
   font-size: 1.5rem;
-  padding-bottom: 2%;
+  padding-bottom: 1%;
 }
 .copyright { 
   float: left;
   left: 1.5%;
   text-align: left;
-  bottom: 3%;
-  position: fixed;
+  bottom: .5%;
+  position: absolute;
 }
 #up img {
   display: none;
@@ -443,10 +444,10 @@ address {
   }
   address {
     font-size: 1.1em;
+    padding: 10% 0 3%;
   }
   .copyright {
-    font-size: 1rem;
-    padding: 10% 0 3%;
+    font-size: .8em;
   }
 }
 @media (min-width: 0px) and (max-width: 600px) {
