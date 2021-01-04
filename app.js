@@ -166,7 +166,6 @@ slideContainer.addEventListener('mouseover', () => {
 	playPause.style.display = 'block';
 })
 
-
 // KEYBOARD FUNCTION
 document.onkeydown = function (event) {
 	event = event || window.event;
