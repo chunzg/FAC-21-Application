@@ -2,7 +2,7 @@
 <html class='red'>
 
 <head>
-  <title>Chun Zhang</title>
+  <title>Chun Zhang FAC Application</title>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <link href='https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600&display=swap' rel='stylesheet'>
   <link rel='stylesheet' type='text/css' href='style.css'>
@@ -12,16 +12,16 @@
 
 <body>
 
-<!-- HEADER/MENU -->
-  <header class='original'>
+<!-- HEADER -->
+  <header>
     <label class='switch'>
       <input type='checkbox'>
       <span class='slider'></span>
     </label>
-    <div class='navbar-button'>
-      <img class='navbar-plus' src='img/plus_2.png' alt='menu button'>
-    </div>
     <nav class='menu'>
+      <button class='navbar-button'>
+        <img class='navbar-plus' src='img/plus_2.png' alt='menu button'>
+      </button>
       <ul class='main-nav'>
           <li class='nav-link highlight'><a href='#aboutme'>About</a></li>
           <li class='nav-link highlight'><a href='#whycode'>Why Coding</a></li>
@@ -32,29 +32,27 @@
   </header>
 
 <!-- LANDING -->
+  <main>
+    <div id='sticky_scroll_one'>
+      <section id='section-one' class='original'>
+        <div>
+          <img class='cut-out' src='img/me_cut.png' alt='photo'><br>
+          <h1 class='highlight'>Hi, this is Chun</h1>
+        </div>
+      </section>
+    </div>
 
-  <div id='sticky_scroll_one'>
-    <section id='container_one' class='original'>
-      <div>
-        <img class='cut-out' src='img/me_cut.png'><br>
-        <h1 class='highlight'>Hi, this is Chun</h1>
-      </div>
-    </section>
-  </div>
-
-  <div id='sticky_scroll_two'> 
 <!-- INTRO -->
-    <section id='container_two'>
-        <ul id='aboutme' class='highlight'>
-          <li><i>About me 1</i><br>lorem ipsum</li>
-          <li><i>About me 2</i><br>lorem ipsum</li>
-          <li><i>About me 3</i><br>lorem ipsum</li>
-        </ul>
-    </section>
+    <div id='sticky_scroll_two'> 
+      <section id='section-two'>
+          <ul id='aboutme' class='highlight'>
+            <li><i>About me 1</i><br>lorem ipsum</li>
+            <li><i>About me 2</i><br>lorem ipsum</li>
+            <li><i>About me 3</i><br>lorem ipsum</li>
+          </ul>
+      </section>
     
-<!-- PICTURES -->
-
-    <section id='container_three'>
+<!-- CAROUSEL -->
       <section class='carousel'>
 
         <section class='slides'>
@@ -66,145 +64,135 @@
             <div class='slide'><img src='img/spain6.jpeg' alt=''></div>
             <div class='slide'><img src='img/spain7.jpeg' alt=''></div>
         </section>
-  
+
         <section class='slide-controls'>
           <button class='prev-btn'><img src='img/arrow_left.png' alt='arrow left'></button>
           <button class='next-btn'><img src='img/arrow_right.png' alt='arrow right'></button>
         </section>
-  
         <input type='image' class='pause' src='img/pause.png'>
-    </section>
+
+      </section>
 
 <!-- TEXT -->
-<main class='grid-container'>
-  <div class='svg'>
-    <section class='scroll-text'>
-      <svg class='svg-container' viewBox='0 0 1806 320'> <!--dimensions of the svg area-->
-        <path id='wave' fill='transparent' stroke='none' stroke-miterlimit='10' d='M-.5 226.5c370.11-106 651.23-92.98 845-58 166.37 30.03 349.27 90.85 619 66 145.47-13.4 263.27-46.85 342-74'/>
-        <text>
-          <textPath class='text-path' href='#wave' startOffset='0'>
-            My Journey So Far
-          </textPath>
-        </text>
-      </svg>
-    </section>  
-  </div>
+      <section id='section-three'>
+        
+        <section class='grid-container'>
 
-  <div class='svg2'>
-    <section class='scroll-text' id='whycode'>
-      <svg class='svg-container' viewBox='0 0 1806 320'>
-        <path id='wave2' fill='transparent' stroke='none' stroke-miterlimit='10' d='M-.5 226.5c370.11-106 651.23-92.98 845-58 166.37 30.03 349.27 90.85 619 66 145.47-13.4 263.27-46.85 342-74'/>
-        <text>
-          <textPath class='text-path' href='#wave2' startOffset='0'>
-            Why Coding?
-          </textPath>
-        </text>
-      </svg>
-    </section> 
-  </div>
+          <svg class='svg svg-container scroll-text' viewBox='0 0 1806 320'> <!--dimensions of the svg area-->
+            <path id='wave' fill='transparent' stroke='none' stroke-miterlimit='10' d='M-.5 226.5c370.11-106 651.23-92.98 845-58 166.37 30.03 349.27 90.85 619 66 145.47-13.4 263.27-46.85 342-74'/>
+            <text>
+              <textPath class='text-path' href='#wave' startOffset='0'>
+                My Journey So Far
+              </textPath>
+            </text>
+          </svg>
 
-  <div class='svg3'>
-    <section class='scroll-text' id='whyfac'>
-      <svg class='svg-container' viewBox='0 0 1806 320'>
-        <path id='wave3' fill='transparent' stroke='none' stroke-miterlimit='10' d='M-.5 226.5c370.11-106 651.23-92.98 845-58 166.37 30.03 349.27 90.85 619 66 145.47-13.4 263.27-46.85 342-74'/>
-        <text>
-          <textPath class='text-path' href='#wave3' startOffset='0'>
-            Why Founders and Coders?
-          </textPath>
-        </text>
-      </svg>
-    </section> 
-  </div>
+          <svg class='svg2 svg-container scroll-text' id='whycode' viewBox='0 0 1806 320'>
+            <path id='wave2' fill='transparent' stroke='none' stroke-miterlimit='10' d='M-.5 226.5c370.11-106 651.23-92.98 845-58 166.37 30.03 349.27 90.85 619 66 145.47-13.4 263.27-46.85 342-74'/>
+            <text>
+              <textPath class='text-path' href='#wave2' startOffset='0'>
+                Why Coding?
+              </textPath>
+            </text>
+          </svg>
 
-  <div class='text1'>
-    <section class='text highlight'>
-      <p id='section-one'>Lorem ipsum dolor sit amet, consectetur adipiscing
-      elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-      aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-      in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-      pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-      culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-    </section>
-  </div>
+          <svg class='svg3 svg-container scroll-text' id='whyfac' viewBox='0 0 1806 320'>
+            <path id='wave3' fill='transparent' stroke='none' stroke-miterlimit='10' d='M-.5 226.5c370.11-106 651.23-92.98 845-58 166.37 30.03 349.27 90.85 619 66 145.47-13.4 263.27-46.85 342-74'/>
+            <text>
+              <textPath class='text-path' href='#wave3' startOffset='0'>
+                Why Founders and Coders?
+              </textPath>
+            </text>
+          </svg>
 
-  <div class='text2'>
-    <section class='text highlight'>
-      <p id='section-two'>Sed ut perspiciatis unde omnis iste natus error
-      sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-      eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
-      vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-      sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-      eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-      qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-      sed quia non numquam eius modi tempora incidunt ut labore et dolore
-      magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-      nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-      aliquid ex ea commodi consequatur? Quis autem vel eum iure
-      reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-      consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-      pariatur
-      </p>
-    </section>
-  </div>
+          <section class='text1'>
+            <p class='highlight'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing
+              elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+              aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+              in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+              pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </section>
 
-  <div class='text3'>
-    <section class='text highlight'>
-      <p id='section-three'>At vero eos et accusamus et iusto odio
-      dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-      atque corrupti quos dolores et quas molestias excepturi sint occaecati
-      cupiditate non provident, similique sunt in culpa qui officia deserunt
-      mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum
-      facilis est et expedita distinctio. Nam libero tempore, cum soluta
-      nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
-      placeat facere possimus, omnis voluptas assumenda est, omnis dolor
-      repellendus. Temporibus autem quibusdam et aut officiis debitis aut
-      rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint
-      et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente
-      delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut
-      perferendis doloribus asperiores repellat.
-      </p>
-    </section>
-  </div>
-</main>
+          <section class='text2'>
+            <p class='highlight'>
+              Sed ut perspiciatis unde omnis iste natus error
+              sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+              eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+              vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+              sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+              eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+              qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
+              sed quia non numquam eius modi tempora incidunt ut labore et dolore
+              magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
+              nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+              aliquid ex ea commodi consequatur? Quis autem vel eum iure
+              reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+              consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
+              pariatur
+            </p>
+          </section>
+
+          <section class='text3'>
+            <p class='highlight'>
+              At vero eos et accusamus et iusto odio
+              dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
+              atque corrupti quos dolores et quas molestias excepturi sint occaecati
+              cupiditate non provident, similique sunt in culpa qui officia deserunt
+              mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum
+              facilis est et expedita distinctio. Nam libero tempore, cum soluta
+              nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
+              placeat facere possimus, omnis voluptas assumenda est, omnis dolor
+              repellendus. Temporibus autem quibusdam et aut officiis debitis aut
+              rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint
+              et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente
+              delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut
+              perferendis doloribus asperiores repellat.
+            </p>
+          </section>
+
+        </section> <!-- grid container -->
+
+      </section> <!--section three-->
+    </div> <!-- sticky scroll two-->
+  </main>
 
 <!-- FOOTER -->
-    <footer id='footer'>
+  <footer id='footer'>
 
-      <div class='grid-container-two'>
-        <span class='me'> 
-          <img class='cut-out-end' src='img/me_cut.png' alt='photo of me'>
-        </span>
-        <span class='fa-layers fa-fw bubble'>
-          <i class='fas fa-comment'></i>
-          <span class='fa-layers-text'></span>
-        </span>
-      </div>
+    <section class='grid-container-two'>
+      <img class='me cut-out-end' src='img/me_cut.png' alt='photo'>
+      <span class='fa-layers fa-fw bubble'>
+        <i class='fas fa-comment'></i>
+        <span class='fa-layers-text'></span>
+      </span>
+    </section>
 
-      <nav class='links'>
-        <ul class='main-links'>
-          <li><a href='https://github.com/chunzg/FAC-21-Application' target='_blank'><img class='github' src='img/github.png' alt=''></a></li>
-          <li><a href='https://www.freecodecamp.org/chunzg' target='_blank'><img class='fcc' src='img/fcc.svg' alt=''></a></li>
-          <li><a href='https://www.codewars.com/users/chunzg' target='_blank'><img class='codewars' src='img/codewars.png' alt=''></a></li>
-        </ul>
-      </nav>
+    <section class='links'>
+      <ul class='main-links'>
+        <li><a href='https://github.com/chunzg/FAC-21-Application' target='_blank'><img src='img/github.png' alt=''></a></li>
+        <li><a href='https://www.freecodecamp.org/chunzg' target='_blank'><img src='img/fcc.png' alt=''></a></li>
+        <li><a href='https://www.codewars.com/users/chunzg' target='_blank'><img src='img/codewars.png' alt=''></a></li>
+      </ul>
+    </section>
 
-      <div class='extra highlight'>
-        <small class='contact'>chunzhang53@gmail.com</small><br>
-        <small class='copyright'>&#169;2021 Chun Zhang</small>
-      </div>
-      
+    <section class='extra highlight'>
+      <small class='contact'>chunzhang53@gmail.com</small><br>
+      <small class='copyright'>&#169;2021 Chun Zhang</small>
+    </section>
+        
+    <button>
       <a href='#top' id='up'>
         <img src='img/finger.png' alt='back to top'>
         <span class='sr-only'>Back to top</span>
       </a>
-    </footer>
+    </button>
 
-  </div>
+  </footer>
 
 <script src='app.js' defer></script>
-
 </body> 
-
 </html>

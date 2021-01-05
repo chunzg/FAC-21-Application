@@ -14,13 +14,7 @@ body {
   flex-direction: column;
 }
 
-/* LANDING */
-#container_one {
-  height: 100vh;
-}
-#sticky_scroll_two {
-  background-color: #faf3e7;
-}
+/* HEADER */
 .highlight {
   background: rgb(219, 255, 153);
 }
@@ -36,8 +30,6 @@ body {
 }
 .switch input {
   opacity: 0;
-  width: 0;
-  height: 0;
 }
 .slider {
   position: absolute;
@@ -56,41 +48,6 @@ input:checked + .slider {
   -ms-transform: translateX(1.6rem);
   transform: translateX(1.6rem);
 }
-#container_one div {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  align-items: center;
-  justify-content: center;
-}
-h1 {
-  font-size: 5rem;
-  font-weight: 500;
-  letter-spacing: .1em;
-  padding-top: 1%;
-}
-.cut-out {
-  width: 10vw;
-  animation: fadeIn ease 3s;
-    -webkit-animation: fadeIn ease 3s;
-    -moz-animation: fadeIn ease 3s;
-    -o-animation: fadeIn ease 3s;
-    -ms-animation: fadeIn ease 3s;
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-500%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}
-
-/* MENU */
 .menu {
   position: fixed;
   text-transform: lowercase;
@@ -150,6 +107,11 @@ h1 {
   width: 2rem;
   height: 2rem;
   z-index: 2;
+  border: none;
+  background: transparent;
+}
+button:focus {
+  outline: 0;
 }
 .navbar-plus {
   height: 2.5rem;
@@ -170,14 +132,53 @@ h1 {
 .navbar-button.active .navbar-plus::after {
   transform: rotate(-45deg);
 }
-#sticky_scroll_one, #sticky_scroll_two{
+#sticky_scroll_one, 
+#sticky_scroll_two {
   position: sticky;
   top: 0;
   height: 100%;
+  background: #faf3e7;
+}
+/* LANDING */
+#section-one {
+  height: 100vh;
+}
+#section-one div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  font-size: 5rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+  padding-top: 1%;
+}
+.cut-out {
+  width: 10vw;
+  animation: fadeIn ease 3s;
+    -webkit-animation: fadeIn ease 3s;
+    -moz-animation: fadeIn ease 3s;
+    -o-animation: fadeIn ease 3s;
+    -ms-animation: fadeIn ease 3s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-500%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
 }
 
 /* INTRO */
-#container_two {
+#section-two {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -254,7 +255,7 @@ h1 {
 }
 
 /* TEXT */
-main {
+#section-three {
   text-align: left;
   font-weight: 400;
   font-size: 1.2rem;
@@ -294,6 +295,8 @@ footer {
   display: flex;
   flex-direction: column;
   text-align: center;
+  background: #faf3e7;
+  z-index: 2;
 }
 .cut-out-end {
   width: 8vw;
@@ -302,7 +305,6 @@ footer {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto auto;
-  gap: 0;
   grid-template-areas:
     ". bubble"
     "me bubble"
@@ -325,19 +327,16 @@ footer {
   list-style-type: none;
   padding-bottom: 10%;
 }
-.fcc, .github {
+.main-links img {
   height: 2em;
   padding: 0 2em;
-}
-.codewars {
-  height: 2.5em;
 }
 .extra { 
   float: left;
   left: 1.5%;
   text-align: left;
   bottom: .5%;
-  position: absolute;
+  position: relative;
 }
 address {
   font-style: normal;
@@ -402,6 +401,7 @@ address {
     width: 4vw;
   }
   .scroll-text {
+    font-size: 5rem;
     padding-top: 8%;
   }
   textPath {
@@ -415,7 +415,7 @@ address {
     padding-bottom: 2%;
   }
   .extra {
-    font-size: .8em;
+    font-size: 1em;
   }
 }
 @media (min-width: 0px) and (max-width: 600px) {
