@@ -183,19 +183,22 @@ h1 {
   flex-direction: column;
   align-items: center;
   padding: 5% 0;
-  letter-spacing: .1em;
-  line-height: 1.2em;
 }
 h2 {
   margin-bottom: .5rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 #aboutme {
   width: 50%;
   list-style-type: none;
+  font-weight: 400;
+  font-size: 1.2rem;
+  letter-spacing: 0.8px;
+  line-height: 1.7em;
+  padding: 2%;
 }
 #aboutme li {
-  padding: 4%;
+  padding: 3%;
 }
 
 /* CAROUSEL */
