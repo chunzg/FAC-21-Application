@@ -8,7 +8,7 @@ function highlightOff() {
 		x.style.transition = '.3s ease-in';
 	})
 }
-slider.addEventListener('mousedown', highlightOff); //click doesn't work here? diff between mousedown and click?
+slider.addEventListener('mousedown', highlightOff); 
 
 //Show/hide menu
 const mainNav = document.querySelector('.main-nav');
@@ -41,7 +41,7 @@ const nextBtn = document.querySelector('.next-btn');
 const prevBtn = document.querySelector('.prev-btn');
 const playPause = document.querySelector('.pause');
 let slides = document.querySelectorAll('.slide');
-let index = 1; //bc 0 is clone of last slide
+let index = 1; 
 let intervalId; 
 
 // Clone first and last image
