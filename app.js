@@ -113,7 +113,7 @@ let slideWidth;
 const initCarousel = () => {
 	// Set slide width and distance to move initially on page load
 	slideWidth = slides[index].clientWidth;
-	slideGroup.style.transform = translateX(`${-slideWidth * index}px`);
+	slideGroup.style.transform = `translateX(${-slideWidth * index}px)`;
 	console.log(slideGroup)
  }
  
