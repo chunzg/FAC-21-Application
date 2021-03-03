@@ -104,9 +104,25 @@ slideGroup.append(firstClone); //ParentNode.append(), newer API than appendChild
 slideGroup.prepend(lastClone);
 
 // Set slide width and distance to move initially on page load
-const slideWidth = slides[index].clientWidth;
-slideGroup.style.transform = `translateX(${-slideWidth * index}px)`;
-console.log(slideGroup)
+// const slideWidth = slides[index].clientWidth;
+// slideGroup.style.transform = `translateX(${-slideWidth * index}px)`;
+// console.log(slideGroup)
+
+let slideWidth;
+
+const initCarousel = () => {
+	// Set slide width and distance to move initially on page load
+	slideWidth = slides[index].clientWidth;
+	slideGroup.style.transform = translateX(`${-slideWidth * index}px`);
+	console.log(slideGroup)
+ }
+ 
+ //Start on load (here bc hoisting)
+ window.addEventListener('DOMContentLoaded', ()=> { 
+	 initCarousel(); 
+	startSlide() 
+	}
+ );
 
 // Function to start moving
 const startSlide = () => {
@@ -117,6 +133,8 @@ const startSlide = () => {
 // Reassign slides var bc length has changed after DOM loaded
 slides = document.querySelectorAll('.slide');
 console.log(slides)
+
+
 
 // Functions to move to next / prev slide
 const nextSlide = () => {
