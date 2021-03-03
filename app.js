@@ -57,10 +57,9 @@ window.addEventListener('scroll', moveText);
 //Typing effect
 const str = 'Thank you for reading!'
 let i = 0;
-let txt;
 
 function typeWriter() {
-	txt = str.slice(0, ++i); //++i refers to the value after increment
+	let txt = str.slice(0, ++i); //++i refers to the value after increment
 	if(txt === str) {
 		i = 0;
 	}
@@ -75,7 +74,7 @@ const up = document.querySelector('#up img');
 const showBackToTop = () => {
 	if(window.pageYOffset > 500) {
 		up.style.display = 'block';
-	} else if(window.pageYOffset <= 500) {
+	} else {
 		up.style.display = 'none';
 	}
 }
