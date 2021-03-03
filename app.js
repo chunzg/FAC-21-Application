@@ -153,7 +153,7 @@ nextBtn.addEventListener('click', nextSlide);
 prevBtn.addEventListener('click', prevSlide);
 
 //Start on load (here bc hoisting)
-window.addEventListener('DOMContentLoaded', startSlide);
+// window.addEventListener('DOMContentLoaded', startSlide);
 
 // When get to end of loop, keep going
 slideGroup.addEventListener('transitionend', () => {
