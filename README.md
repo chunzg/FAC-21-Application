@@ -5,7 +5,7 @@ The criteria was to create the website using HTML, CSS, vanilla JavaScript only,
 
 ## Improvements to make:
 
-- Fix the image carousel which currently only automatically slides on page reload. 
+- Fix the image carousel which currently only automatically slides on page reload, except in Firefox.
 - Improve the back to top button scroll which performs a smooth scroll on Android but a sudden jump on iPhone. 
 
 Read more about Founders and Coders **[here](https://www.foundersandcoders.com/)**

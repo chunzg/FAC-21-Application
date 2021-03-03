@@ -110,6 +110,7 @@ console.log(slideGroup)
 
 // Function to start moving
 const startSlide = () => {
+	console.log('Dom loaded');
 	return intervalId = setInterval(nextSlide, 3000);
 };
 
@@ -134,7 +135,7 @@ nextBtn.addEventListener('click', nextSlide);
 prevBtn.addEventListener('click', prevSlide);
 
 //Start on load (here bc hoisting)
-startSlide();
+window.addEventListener('DOMContentLoaded', startSlide);
 
 // When get to end of loop, keep going
 slideGroup.addEventListener('transitionend', () => {
