@@ -257,6 +257,10 @@ h2 {
   outline: none;
   padding: 15% 25%;
 }
+.pause:hover {
+  opacity: 1;
+  transition: .8s ease;
+}
 
 /* TEXT */
 #section-three {

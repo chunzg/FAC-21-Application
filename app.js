@@ -34,6 +34,54 @@ navLinks.forEach((x) => {
 	})
 })
 
+
+//Move text along the svg path according to the user's scroll position
+const svgContainer = document.querySelectorAll('.svg-container')
+const textPath = document.querySelectorAll('.text-path')
+const path = document.querySelector('#wave, #wave2, #wave3');
+const pathLength = path.getTotalLength()
+
+const moveText = () => {
+	requestAnimationFrame(function() {
+		let scrollPercent = []
+		svgContainer.forEach(x => {
+			scrollPercent.push(x.getBoundingClientRect().y / window.outerHeight);
+		})
+		textPath[0].setAttribute('startOffset', scrollPercent[0] * pathLength);
+		textPath[1].setAttribute('startOffset', scrollPercent[1] * pathLength);
+		textPath[2].setAttribute('startOffset', scrollPercent[2] * pathLength);
+	})
+}
+window.addEventListener('scroll', moveText);
+
+//Typing effect
+const str = 'Thank you for reading!'
+let i = 0;
+let txt;
+
+function typeWriter() {
+	txt = str.slice(0, ++i); //++i refers to the value after increment
+	if(txt === str) {
+		i = 0;
+	}
+	document.querySelector('.fa-layers-text').textContent = txt;
+	setTimeout(typeWriter, 200)
+}
+typeWriter()
+
+// Show/hide back to top button after a certain point
+const up = document.querySelector('#up img');
+
+const showBackToTop = () => {
+	if(window.pageYOffset > 500) {
+		up.style.display = 'block';
+	} else if(window.pageYOffset <= 500) {
+		up.style.display = 'none';
+	}
+}
+window.addEventListener('scroll', showBackToTop);
+
+
 //Carousel
 const carousel = document.querySelector('.carousel');
 const slideGroup = document.querySelector('.slides');
@@ -118,15 +166,7 @@ function playOrPause() {
 }
 playPause.addEventListener('click', playOrPause);
 
-// Play pause mouseover event
-carousel.addEventListener('mouseout', () => {
-	playPause.style.opacity = 0;
-	playPause.style.transition = '.5s';
-})
-carousel.addEventListener('mouseover', () => {
-	playPause.style.opacity = 1;
-	playPause.style.transition = '.5s';
-})
+// Play pause mouseover event - moved to CSS bc loads faster
 
 // Keyboard function
 function onKeydown(e) {
@@ -143,50 +183,3 @@ function onKeydown(e) {
 	}
 }
 document.addEventListener('keydown', onKeydown);
-
-
-//Move text along the svg path according to the user's scroll position
-const svgContainer = document.querySelectorAll('.svg-container')
-const textPath = document.querySelectorAll('.text-path')
-const path = document.querySelector('#wave, #wave2, #wave3');
-const pathLength = path.getTotalLength()
-
-const moveText = () => {
-	requestAnimationFrame(function() {
-		let scrollPercent = []
-		svgContainer.forEach(x => {
-			scrollPercent.push(x.getBoundingClientRect().y / window.outerHeight);
-		})
-		textPath[0].setAttribute('startOffset', scrollPercent[0] * pathLength);
-		textPath[1].setAttribute('startOffset', scrollPercent[1] * pathLength);
-		textPath[2].setAttribute('startOffset', scrollPercent[2] * pathLength);
-	})
-}
-window.addEventListener('scroll', moveText);
-
-//Typing effect
-const str = 'Thank you for reading!'
-let i = 0;
-let txt;
-
-function typeWriter() {
-	txt = str.slice(0, ++i); //++i refers to the value after increment
-	if(txt === str) {
-		i = 0;
-	}
-	document.querySelector('.fa-layers-text').textContent = txt;
-	setTimeout(typeWriter, 200)
-}
-typeWriter()
-
-// Show/hide back to top button after a certain point
-const up = document.querySelector('#up img');
-
-const showBackToTop = () => {
-	if(window.pageYOffset > 500) {
-		up.style.display = 'block';
-	} else if(window.pageYOffset <= 500) {
-		up.style.display = 'none';
-	}
-}
-window.addEventListener('scroll', showBackToTop);
