@@ -38,7 +38,7 @@ navLinks.forEach((x) => {
 //Move text along the svg path according to the user's scroll position
 const svgContainer = document.querySelectorAll('.svg-container')
 const textPath = document.querySelectorAll('.text-path')
-const path = document.querySelector('#wave, #wave2, #wave3');
+const path = document.querySelector('#wave');
 const pathLength = path.getTotalLength()
 
 const moveText = () => {
@@ -47,9 +47,9 @@ const moveText = () => {
 		svgContainer.forEach(x => {
 			scrollPercent.push(x.getBoundingClientRect().y / window.outerHeight);
 		})
-		textPath[0].setAttribute('startOffset', scrollPercent[0] * pathLength);
-		textPath[1].setAttribute('startOffset', scrollPercent[1] * pathLength);
-		textPath[2].setAttribute('startOffset', scrollPercent[2] * pathLength);
+		textPath.forEach((x, i) => {
+			x.setAttribute('startOffset', scrollPercent[i] * pathLength);
+		})
 	})
 }
 window.addEventListener('scroll', moveText);
